@@ -6,17 +6,17 @@ export default function Navbar() {
 
   return (
     <>
-    <nav className="flex justify-between items-center h-16 px-4 bg-gray-900 text-white">
+    <nav className="flex justify-between items-center h-16 px-4 bg-gradient-to-r from-neutral-900 to-neutral-800 text-white">
       <div className="text-xl font-bold text-[#F39C12]">TruckRepair Logistics</div>
       
       {/* Desktop Navigation */}
-      <div className="hidden md:flex md:items-center md:space-x-6">
+      <div className="hidden md:flex   md:items-center md:space-x-6">
         <ul className="flex space-x-6">
           {navItems.map((name, index) => (
             <li key={index}>
               <a
                 href="#"
-                className="text-blue-400 hover:text-blue-600 underline"
+                className="text-white hover:text-blue-600 underline"
               >
                 {name}
               </a>
@@ -47,13 +47,13 @@ export default function Navbar() {
     </nav>
      {/* Mobile Navigation Menu */}
      {isMenuOpen && (
-        <div className="absolute top-16 left-0 w-full bg-gray-900 text-white md:hidden p-4">
+        <div className="absolute top-16 left-0 w-full bg-gradient-to-r from-neutral-900 to-neutral-800 text-white md:hidden p-4 z-50">
           <ul className="flex flex-col space-y-4">
             {navItems.map((name, index) => (
               <li key={index}>
                 <a
                   href="#"
-                  className="text-blue-400 hover:text-blue-600 underline block"
+                  className="text-white hover:text-blue-600  block"
                 >
                   {name}
                 </a>
