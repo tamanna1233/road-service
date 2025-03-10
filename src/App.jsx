@@ -1,20 +1,20 @@
 
 import './App.css'
-import EmergencyBadge from './component/EmergencyBadge'
-import Navbar from './component/NavBar'
-import ServiceCardsRow from './component/Services'
-import TruckAnimation from './component/TruckAnimation'
+import AboutUs from './components/Aboutus'
+import Footer from './components/Footer'
+import Home from './components/Home'
+import Navbar from './components/NavBar'
+import ServicesSection from './components/Services'
 
 function App() {
 
   return (
 <>
-<div className='bg-black'>
 <Navbar/>
-<EmergencyBadge/>
-<TruckAnimation/>
-<ServiceCardsRow/>
-</div>
+<Home/>
+<ServicesSection/>
+<AboutUs/>
+<Footer/>
 </>      
   )
 }
