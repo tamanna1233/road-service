@@ -3,7 +3,7 @@ import { HiMiniCubeTransparent } from "react-icons/hi2";
 import { LiaCertificateSolid } from "react-icons/lia";
 import { IoMdTime } from "react-icons/io";
 import { CiLocationOn } from "react-icons/ci";
-import { FaBolt } from "react-icons/fa6";
+import { FaBolt, FaUser } from "react-icons/fa6";
 const AboutUs = () => {
   const services = [
     { id: 1, title: "Certified Excellence", icon: <LiaCertificateSolid /> , description: "All our technicians are ASE-certified with regular training on the latest vehicle technologies" },
@@ -28,7 +28,7 @@ const AboutUs = () => {
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }} // Smooth scaling
       >
-        <div className="bg-black rounded-full w-20 h-20 flex items-center justify-center  p-4">
+        <div className="bg-black rounded-full text-2xl w-20 h-20 flex items-center justify-center  p-4">
         {icon}
         </div>
         <motion.h3
@@ -54,50 +54,16 @@ const AboutUs = () => {
   }
   const stats=[
     { id: 1, title: "Years of Experience", icon: "20+" , description: "Two decades of specialized experience in commercial truck repairs and maintenance" },
-    { id: 2, title: "24/7 Availability", icon: <IoMdTime />, description: "Our emergency services operate around the clock, ensuring help is always available when you need it" },
-    { id: 3, title: "Nationwide Coverage", icon: <CiLocationOn />, description: "Strategic locations across the country to provide quick response times in major transport corridors" },
+    { id: 2, title: "2Repairs Completed", icon: "50K+", description: "Over 50,000 successful repairs and roadside assistance services provided" },
+    { id: 3, title: "Customer Satisfaction", icon: "99%", description: "Industry-leading satisfaction rate based on post-service customer surveys" },
    
   ]
-// const StatsCard=({title, icon, description })=>{
-//   return(
-//     <motion.div
-//     className="bg-gray-100 text-black p-6 rounded-xl shadow-lg flex flex-col items-center text-center"
-//     whileHover={{ scale: 1.08, rotate: 2 }} // Slight tilt & scale on hover
-//     transition={{ duration: 0.4, ease: "easeInOut" }} // Faster hover effect
-//     initial={{ opacity: 0, y: 50, scale: 0.95 }} // Starts slightly lower & smaller
-//     whileInView={{ opacity: 1, y: 0, scale: 1 }} // Smooth reveal
-//     viewport={{ once: false, amount: 0.3 }} // Repeats when scrolled into view
-//   >
-//     <motion.div
-//       className="text-4xl text-blue-400 mb-4 flex items-center gap-x-2 "
-//       initial={{ opacity: 0, scale: 0.8 }}
-//       whileInView={{ opacity: 1, scale: 1 }}
-//       transition={{ duration: 0.5, ease: "easeOut" }} // Smooth scaling
-//     >
-//       <div className="bg-black rounded-full  p-4">
-//       {icon}
-//       </div>
-//       <motion.h3
-//       className="text-xl font-bold mb-2 "
-//       initial={{ opacity: 0, y: 10 }}
-//       whileInView={{ opacity: 1, y: 0 }}
-//       transition={{ duration: 0.5, delay: 0.2 }} // Delayed text appearance
-//     >
-//       {title}
-//     </motion.h3>
-//     </motion.div>
-    
-//     <motion.p
-//       className="text-black"
-//       initial={{ opacity: 0, y: 10 }}
-//       whileInView={{ opacity: 1, y: 0 }}
-//       transition={{ duration: 0.5, delay: 0.3 }} // Delayed paragraph appearance
-//     >
-//       {description}
-//     </motion.p>
-//   </motion.div>
-//   )
-// }
+const teamStats=[
+  { id: 1, title: "Chief Executive Officer", icon: <FaUser/> , description: "30+ years in commercial trucking logistics and management" },
+  { id: 2, title: "Chief Operations Officer", icon: <FaUser/>, description: "Expert in optimizing fleet management and service logistics" },
+  { id: 3, title: "Technical Director", icon: <FaUser/>, description: "Master technician with specializations in diesel systems and fleet maintenance" },
+ 
+]
 
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 place-content-center gap-x-24 px-8 bg-white py-12 ">
@@ -191,6 +157,29 @@ Our team of ASE-certified technicians specializes in all aspects of commercial v
   
 </motion.div>
 
+<motion.div className=" w-full mt-8 col-span-full ">
+  <motion.h1 
+    className="text-4xl font-bold text-gray-900 text-center"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    viewport={{ once: false, amount: 0.3 }}
+  >
+    Our Leadership Team
+  </motion.h1>
+  
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-22 py-4 px-32">
+          {teamStats.map((stats) => (
+            <AboutusCard key={stats.id} {...stats} />
+          ))}
+        </div>
+
+  
+</motion.div>
+
+     <motion.div className=" col-span-full flex justify-center items-center mt-8">
+        <button className="bg-black  rounded-md text-white p-4"> Contact our Team </button>
+      </motion.div>  
 
       
       

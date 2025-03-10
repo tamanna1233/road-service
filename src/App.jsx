@@ -4,6 +4,7 @@ import AboutUs from './components/Aboutus'
 import Home from './components/Home'
 import Navbar from './components/NavBar'
 import ServicesSection from './components/Services'
+import Testamonials from './components/Testamonials'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
 <Home/>
 <ServicesSection/>
 <AboutUs/>
+<Testamonials/>
 </>      
   )
 }
