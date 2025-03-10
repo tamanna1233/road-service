@@ -13,12 +13,38 @@
         transform: rotate(3deg);
       }
     }
-    --animate-truck : truck-move 20s ease-in-out infinite;
+    --animate-truck : truck-move 10s ease-in-out  infinite;
 
-    @keyframes truck-move{
-        0% {transform:translateX(-100vw);}
-        100% {transform:translateX(100vw);}
+    @keyframes truck-move {
+      0% {
+        transform: translateX(-20vw) scale(0.5);
+        opacity: 0.1;
+        filter: blur(2px);
+      }
+      20% {
+        transform: translateX(10vw) rotate(-5deg);
+        opacity: 0.5;
+        filter: blur(0px);
+      }
+      40% {
+        transform: translateX(30vw) rotate(5deg);
+        opacity: 1;
+      }
+      60% {
+        transform: translateX(50vw) rotate(-3deg) ;
+        opacity: 0.8;
+      }
+      80% {
+        transform: translateX(70vw) rotate(3deg) ;
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateX(120vw);
+        opacity: 0;
+        /* filter: blur(2px); */
+      }
     }
+    
 
     --animate-fade-in-scale: fade-in-scale 0.3s ease-out;
     @keyframes fade-in-scale {

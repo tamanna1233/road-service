@@ -1,8 +1,9 @@
 
 import './App.css'
-import Home from './component/Home'
-import Navbar from './component/NavBar'
-import Services from './component/Services'
+import AboutUs from './components/Aboutus'
+import Home from './components/Home'
+import Navbar from './components/NavBar'
+import ServicesSection from './components/Services'
 
 function App() {
 
@@ -10,7 +11,8 @@ function App() {
 <>
 <Navbar/>
 <Home/>
-<Services/>
+<ServicesSection/>
+<AboutUs/>
 </>      
   )
 }
