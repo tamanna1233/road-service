@@ -82,11 +82,17 @@ const Home = () => {
         <div
           className='absolute bottom-0 left-0 w-full h-20 overflow-hidden'
         >
-          <img 
-            src={truckimage} 
-            alt="Moving Truck" 
-            className=' h-20  animate-truck'
-          />
+         <img 
+  src={truckimage}  // The default image source
+  alt="Moving Truck"
+  width="80"  // Width of the image
+  height="80"  // Height of the image
+  srcSet={` ${truckimage}40w, ${truckimage} 80w, ${truckimage} 160w` } // Define different sizes for responsive images
+  sizes="(max-width: 600px) 40px, 80px"  // Size logic for responsiveness
+  className="h-20 w-20 animate-truck text-red-500"
+  loading="lazy"  // Lazy loading for performance
+/>
+
           
         </div>
 

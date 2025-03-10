@@ -23,7 +23,7 @@ const AboutUs = () => {
       viewport={{ once: false, amount: 0.3 }} // Repeats when scrolled into view
     >
       <motion.div
-        className="text-4xl text-blue-400 mb-4 flex items-center gap-x-2 "
+        className="text-4xl text-blue-400 mb-4 grid  place-items-center gap-x-2 "
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }} // Smooth scaling
@@ -31,24 +31,24 @@ const AboutUs = () => {
         <div className="bg-black rounded-full text-2xl w-20 h-20 flex items-center justify-center  p-4">
         {icon}
         </div>
-        <motion.h3
+        <motion.h1
         className="text-xl font-bold mb-2 "
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }} // Delayed text appearance
       >
         {title}
-      </motion.h3>
+      </motion.h1>
       </motion.div>
       
-      <motion.p
+      <motion.h2
         className="text-black"
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }} // Delayed paragraph appearance
       >
         {description}
-      </motion.p>
+      </motion.h2>
     </motion.div>
     )
   }
@@ -66,7 +66,7 @@ const teamStats=[
 ]
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 place-content-center gap-x-24 px-8 bg-white py-12 ">
+    <section className="grid grid-cols-1 lg:grid-cols-2 place-content-center gap-x-24 px-8 bg-white py-12 ">
       <motion.div 
         className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8"
         initial={{ opacity: 0, y: 30 }}
@@ -75,7 +75,7 @@ const teamStats=[
         viewport={{ once: false ,amount:0.3}}
       >
         <motion.div 
-          className="bg-[#262626] p-6 rounded-lg shadow-lg min-w-lg max-w-2xl min-h-72 flex justify-start items-start flex-col"
+          className="bg-[#262626] p-6 rounded-lg shadow-lg min-w-xs max-w-lg min-h-72 flex justify-start items-start flex-col"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
@@ -149,7 +149,7 @@ Our team of ASE-certified technicians specializes in all aspects of commercial v
     Why Customers Choose Us
   </motion.h1>
   
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-22 py-4">
+  <div className="grid grid-cols-1 lg:grid-cols-3 gap-22 py-4">
           {stats.map((stats) => (
             <AboutusCard key={stats.id} {...stats} />
           ))}
@@ -168,7 +168,7 @@ Our team of ASE-certified technicians specializes in all aspects of commercial v
     Our Leadership Team
   </motion.h1>
   
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-22 py-4 px-32">
+  <div className="grid grid-cols-1 lg:grid-cols-3 gap-22 py-4 px-8 md:px-32">
           {teamStats.map((stats) => (
             <AboutusCard key={stats.id} {...stats} />
           ))}

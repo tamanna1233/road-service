@@ -18,11 +18,11 @@ const services = [
   { id: 10, title: "Water pumps Repair", icon: <RiOilFill />, description: "Comprehensive truck inspections to ensure safety and compliance." },
   { id: 11, title: " Lights and light wiring", icon: <FaNetworkWired />, description: "Comprehensive truck inspections to ensure safety and compliance." },
   { id: 12, title: "Tailgate repair", icon: <PiTruckTrailer />, description: "Comprehensive truck inspections to ensure safety and compliance." },
-  { id: 13, title: "Radiator repair", icon: <PiEngineBold />, description: "Comprehensive truck inspections to ensure safety and compliance." },
-  { id: 13, title: "Roadside assistance", icon: <BsTruckFlatbed/>, description: "Comprehensive truck inspections to ensure safety and compliance." },
-  { id: 13, title: "Towing services", icon: <GiTowTruck/>, description: "Comprehensive truck inspections to ensure safety and compliance." },
-  { id: 13, title: "Landing gear repair", icon: <GiGearStick />, description: "Comprehensive truck inspections to ensure safety and compliance." },
-  { id: 13, title: "Reefer repair", icon: <FaTruck />, description: "Comprehensive truck inspections to ensure safety and compliance." },
+  { id: 14, title: "Radiator repair", icon: <PiEngineBold />, description: "Comprehensive truck inspections to ensure safety and compliance." },
+  { id: 15, title: "Roadside assistance", icon: <BsTruckFlatbed/>, description: "Comprehensive truck inspections to ensure safety and compliance." },
+  { id: 16, title: "Towing services", icon: <GiTowTruck/>, description: "Comprehensive truck inspections to ensure safety and compliance." },
+  { id: 17, title: "Landing gear repair", icon: <GiGearStick />, description: "Comprehensive truck inspections to ensure safety and compliance." },
+  { id: 18, title: "Reefer repair", icon: <FaTruck />, description: "Comprehensive truck inspections to ensure safety and compliance." },
 
   
 ];
