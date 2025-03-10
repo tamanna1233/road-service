@@ -54,7 +54,7 @@ const Home = () => {
               viewport={{ once: false, amount: 0.3 }}
               className="flex flex-wrap gap-4"
             >
-              <a href="#emergency" className="px-8 py-3 bg-[#E74C3C] hover:bg-[#c0392b] rounded-md text-white font-medium transition duration-300">
+              <a href="#emergency" className="px-8 py-3 bg-yellow-400 hover:bg-[#c0392b] rounded-md text-black font-medium transition duration-300">
                 Emergency Service
               </a>
               <a href="#services" className="px-8 py-3 bg-[#1A3E6C] hover:bg-[#152d4e] rounded-md text-white font-medium transition duration-300">
@@ -79,19 +79,15 @@ const Home = () => {
         </motion.div>
 
         {/* Truck Image Animation */}
-        <motion.div 
-          initial={{ opacity: 0, x: -100 }} 
-          whileInView={{ opacity: 1, x: 1200 }} // Moves only when in view
-          transition={{ duration: 10, ease: "linear" }}
-          viewport={{ once: false, amount: 0.3 }}
+        <div
           className='absolute bottom-0 left-0 w-full h-20 overflow-hidden'
         >
           <img 
             src={truckimage} 
-            className='h-20' 
             alt="Moving Truck" 
+            className=' h-20  animate-truck'
           />
-        </motion.div>
+        </div>
 
       </section>
     </section>
