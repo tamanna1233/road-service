@@ -21,7 +21,6 @@ function App() {
 <Home/>
 <ServicesSection/>
 <AboutUs/>
-{/* <Gallery/> */}
 <Testamonials/>
 <Contact/>
 <FAQ/>
