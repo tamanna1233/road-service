@@ -4,7 +4,7 @@ import { Link } from "react-scroll";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navItems = ["Home", "Services","Gallery", "About Us", "Testimonial", "Contact", "FAQ"];
+  const navItems = ["Home", "Services", "About Us", "Testimonial", "Contact", "FAQ"];
 
   // Animation Variants
   const menuVariants = {
