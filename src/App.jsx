@@ -2,6 +2,7 @@
 import './App.css'
 import AboutUs from './components/Aboutus'
 import Footer from './components/Footer'
+import Gallery from './components/Gallery'
 import Home from './components/Home'
 import Navbar from './components/NavBar'
 import ServicesSection from './components/Services'
@@ -15,11 +16,9 @@ function App() {
 <Home/>
 <ServicesSection/>
 <AboutUs/>
-<<<<<<< HEAD
-<Footer/>
-=======
+<Gallery/>
 <Testamonials/>
->>>>>>> 84f2e9ef979fac1344f09d6a01713f8f6c59d3d4
+<Footer/>
 </>      
   )
 }

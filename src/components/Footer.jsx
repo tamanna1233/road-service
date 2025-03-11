@@ -4,7 +4,8 @@ import { FaSquareXTwitter,FaPhone } from "react-icons/fa6";
 import { IoIosMailUnread } from "react-icons/io";
 export default function Footer() {
   return (
-    <footer className="container mx-auto px-4 py-12 bg-gray-900 text-gray-400">
+    <>
+    <footer className=" mx-auto px-8 py-4 bg-gray-900 text-gray-400">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
         {/* Company Info */}
         <div>
@@ -45,8 +46,11 @@ export default function Footer() {
           <ul className="space-y-3">
             <li><a href="#services" className="hover:text-white transition duration-300">Emergency Roadside Assistance</a></li>
             <li><a href="#services" className="hover:text-white transition duration-300">Engine Diagnostics & Repair</a></li>
-            <li><a href="#services" className="hover:text-white transition duration-300">Preventive Maintenance</a></li>
-            <li><a href="#services" className="hover:text-white transition duration-300">Fleet Management Solutions</a></li>
+            <li><a href="#services" className="hover:text-white transition duration-300">Wheel laser alignment</a></li>
+            <li><a href="#services" className="hover:text-white transition duration-300">New tires installation</a></li>
+            <li><a href="#services" className="hover:text-white transition duration-300">Mobile Trailer/Truck Repair</a></li>
+            <li><a href="#services" className="hover:text-white transition duration-300">Hydraulic Service</a></li>
+
           </ul>
         </div>
         
@@ -79,8 +83,8 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      
-    <footer className="bg-gray-900 text-white py-6 mt-10">
+      </footer>
+    <div className="bg-gray-900 text-white py-6 mt-2">
       <div className="container mx-auto px-6 text-center">
         <p className="text-sm">&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
         <nav className="mt-4">
@@ -91,8 +95,8 @@ export default function Footer() {
           </ul>
         </nav>
       </div>
-    </footer>
+    </div>
  
-    </footer>
+    </>
   );
 }

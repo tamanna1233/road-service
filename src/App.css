@@ -3,7 +3,7 @@
 @theme{
 
     /* --*: initial; */
-    --animate-wiggle: wiggle 1s ease-in-out infinite;
+  --animate-wiggle: wiggle 1s ease-in-out infinite;
     @keyframes wiggle {
       0%,
       100% {
