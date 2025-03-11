@@ -33,7 +33,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className=" fixed w-full z-10">
+    <div className=" fixed w-full z-50">
       <nav className="flex  justify-between items-center h-16 px-4 bg-gradient-to-r from-neutral-900 to-neutral-800 text-white">
         <div className="text-xl font-bold text-[#F39C12]">TruckRepair Logistics</div>
 
@@ -42,7 +42,7 @@ export default function Navbar() {
           <ul className="flex space-x-6">
             {navItems.map((name, index) => (
               <li key={index}>
-                <Link to={name} smooth={true} aria-label={`${name}`} className="text-white hover:text-blue-600 underline">
+                <Link to={name} smooth={true} aria-label={`${name}`} className="text-white hover:text-blue-600 underline cursor-pointer">
                   {name}
                 </Link>
               </li>
