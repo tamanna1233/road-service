@@ -1,12 +1,17 @@
 
+import { lazy } from 'react'
 import './App.css'
-import AboutUs from './components/Aboutus'
-import Footer from './components/Footer'
-import Gallery from './components/Gallery'
-import Home from './components/Home'
-import Navbar from './components/NavBar'
-import ServicesSection from './components/Services'
-import Testamonials from './components/Testamonials'
+import FAQ from './components/FAQ'
+import Contact from './components/Contact'
+import Gallery from "./components/Gallery"
+
+const Home =lazy(()=>import('./components/Home'))
+const Navbar =lazy(()=>import('./components/NavBar'))
+const ServicesSection =lazy(()=>import('./components/Services'))
+const AboutUs =lazy(()=>import('./components/Aboutus'))
+const Testamonials =lazy(()=>import('./components/Testamonials'))
+
+const Footer =lazy(()=>import('./components/Footer'))
 
 function App() {
 
@@ -16,8 +21,10 @@ function App() {
 <Home/>
 <ServicesSection/>
 <AboutUs/>
-<Gallery/>
+{/* <Gallery/> */}
 <Testamonials/>
+<Contact/>
+<FAQ/>
 <Footer/>
 </>      
   )

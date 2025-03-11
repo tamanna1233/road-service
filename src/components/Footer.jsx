@@ -5,7 +5,7 @@ import { IoIosMailUnread } from "react-icons/io";
 export default function Footer() {
   return (
     <>
-    <footer className=" mx-auto px-8 py-4 bg-gray-900 text-gray-400">
+    <footer className="  px-4 py-12 bg-gray-900 text-gray-400">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
         {/* Company Info */}
         <div>
@@ -14,18 +14,16 @@ export default function Footer() {
             Providing professional truck repair and roadside assistance services nationwide. Keeping America's commercial fleets running efficiently 24/7/365.
           </p>
           <div className="flex space-x-4">
-            <a href="#" className="hover:text-yellow-500 transition duration-300">
+            <a href="#" className="hover:text-yellow-500 transition duration-300" aria-label="Facebook">
               <FaFacebook size={24} />
             </a>
-            <a href="#" className="hover:text-yellow-500 transition duration-300">
+            <a href="#" className="hover:text-yellow-500 transition duration-300" aria-label="twitter">
               <FaSquareXTwitter size={24} />
             </a>
-            <a href="#" className="hover:text-yellow-500 transition duration-300">
+            <a href="#" className="hover:text-yellow-500 transition duration-300" aria-label="linkedin">
               {/* <Linkedin size={24} /> */}
             </a>
-            <a href="#" className="hover:text-yellow-500 transition duration-300">
-              {/* <Github size={24} /> */}
-            </a>
+           
           </div>
         </div>
         
@@ -33,10 +31,10 @@ export default function Footer() {
         <div>
           <h3 className="text-xl font-bold mb-6 text-yellow-500">Quick Links</h3>
           <ul className="space-y-3">
-            <li><a href="#" className="hover:text-white transition duration-300">Home</a></li>
-            <li><a href="#" className="hover:text-white transition duration-300">About Us</a></li>
-            <li><a href="#" className="hover:text-white transition duration-300">Services</a></li>
-            <li><a href="#" className="hover:text-white transition duration-300">Contact</a></li>
+            <li><a href="#" className="hover:text-white transition duration-300" aria-label="Home">Home</a></li>
+            <li><a href="#" className="hover:text-white transition duration-300" aria-label="About us">About Us</a></li>
+            <li><a href="#" className="hover:text-white transition duration-300 "aria-label="Services">Services</a></li>
+            <li><a href="#" className="hover:text-white transition duration-300" aria-label="Contact">Contact</a></li>
           </ul>
         </div>
         
@@ -44,13 +42,10 @@ export default function Footer() {
         <div>
           <h3 className="text-xl font-bold mb-6 text-yellow-500">Our Services</h3>
           <ul className="space-y-3">
-            <li><a href="#services" className="hover:text-white transition duration-300">Emergency Roadside Assistance</a></li>
-            <li><a href="#services" className="hover:text-white transition duration-300">Engine Diagnostics & Repair</a></li>
-            <li><a href="#services" className="hover:text-white transition duration-300">Wheel laser alignment</a></li>
-            <li><a href="#services" className="hover:text-white transition duration-300">New tires installation</a></li>
-            <li><a href="#services" className="hover:text-white transition duration-300">Mobile Trailer/Truck Repair</a></li>
-            <li><a href="#services" className="hover:text-white transition duration-300">Hydraulic Service</a></li>
-
+            <li><a href="#services" className="hover:text-white transition duration-300" aria-label="Emergency Roadside Assistance">Emergency Roadside Assistance</a></li>
+            <li><a href="#services" className="hover:text-white transition duration-300" aria-label="Engine Diagnostics & Repair">Engine Diagnostics & Repair</a></li>
+            <li><a href="#services" className="hover:text-white transition duration-300" aria-label="Preventive Maintenance">Preventive Maintenance</a></li>
+            <li><a href="#services" className="hover:text-white transition duration-300" aria-label="Fleet Management Solutions">Fleet Management Solutions</a></li>
           </ul>
         </div>
         

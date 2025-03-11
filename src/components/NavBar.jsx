@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-scroll";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navItems = ["Home", "Service", "About Us", "Location", "Contact", "FAQ"];
+  const navItems = ["Home", "Services","Gallery", "About Us", "Testimonial", "Contact", "FAQ"];
 
   // Animation Variants
   const menuVariants = {
@@ -32,8 +33,8 @@ export default function Navbar() {
   };
 
   return (
-    <>
-      <nav className="flex justify-between items-center h-16 px-4 bg-gradient-to-r from-neutral-900 to-neutral-800 text-white">
+    <div className=" fixed w-full z-10">
+      <nav className="flex  justify-between items-center h-16 px-4 bg-gradient-to-r from-neutral-900 to-neutral-800 text-white">
         <div className="text-xl font-bold text-[#F39C12]">TruckRepair Logistics</div>
 
         {/* Desktop Navigation */}
@@ -41,9 +42,9 @@ export default function Navbar() {
           <ul className="flex space-x-6">
             {navItems.map((name, index) => (
               <li key={index}>
-                <a href="#" className="text-white hover:text-blue-600 underline">
+                <Link to={name} smooth={true} className="text-white hover:text-blue-600 underline">
                   {name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -76,15 +77,15 @@ export default function Navbar() {
             <motion.ul className="flex flex-col space-y-4">
               {navItems.map((name, index) => (
                 <motion.li key={index} variants={itemVariants}>
-                  <a href="#" className="text-white hover:text-blue-600 block">
+                  <Link to={name} smooth={true} className="text-white hover:text-blue-600 block">
                     {name}
-                  </a>
+                  </Link>
                 </motion.li>
               ))}
             </motion.ul>
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 }

@@ -1,16 +1,45 @@
 import React from 'react'
-
+import image from '../assets/fast-delivery.png'
 const Gallery = () => {
   return (
     <>
-        <div className=''>
-        <div className='text-yellow-300 text-center py-4 text-lg sm:text-2xl md:text-4xl font-imprint'>Gallery</div>
+        <section name="Gallery" className=''>
+                <h2 className="text-4xl font-bold mb-6 text-center mx-auto">Gallery</h2>
+        
         <div className='flex justify-center py-4'>
-          <div className='grid grid-cols-2 sm:grid-cols-4 text-white gap-x-4 gap-y-8 px-8 sm:px-40'>
+          <div className=''>
             
-                <div >
+                <div className='grid grid-cols-2 sm:grid-cols-4 text-white gap-x-4 gap-y-8 px-8 sm:px-40' >
                   <img
-                    src='../assets/Gallery/DSC_2028.JPG'
+                    src={image}
+                    alt=''
+                    className='hover:cursor-pointer hover:scale-105 h-auto w-full transition-transform duration-300 '
+                    width="300" 
+                    height="200"
+                  />
+                   <img
+                    src={image}
+                    alt=''
+                    className='hover:cursor-pointer hover:scale-105 h-auto w-full transition-transform duration-300 '
+                    width="300" 
+                    height="200"
+                  />
+                   <img
+                    src={image}
+                    alt=''
+                    className='hover:cursor-pointer hover:scale-105 h-auto w-full transition-transform duration-300 '
+                    width="300" 
+                    height="200"
+                  />
+                   <img
+                    src={image}
+                    alt=''
+                    className='hover:cursor-pointer hover:scale-105 h-auto w-full transition-transform duration-300 '
+                    width="300" 
+                    height="200"
+                  />
+                   <img
+                    src={image}
                     alt=''
                     className='hover:cursor-pointer hover:scale-105 h-auto w-full transition-transform duration-300 '
                     width="300" 
@@ -20,7 +49,7 @@ const Gallery = () => {
            
           </div>
         </div>
-      </div>
+      </section>
     </>
       
     

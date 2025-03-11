@@ -50,26 +50,26 @@ export default function Testimonials() {
   };
 
   return (
-    <div className="  py-16 bg-black ">
+    <section name="Testimonial" className="  py-16 bg-black ">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9 }}
         className="text-center mb-16"
       >
-        <span className="inline-block px-4 py-1 bg-[#F39C12] text-white rounded-full text-sm font-semibold mb-4">
+        <h1 className="inline-block px-4 py-1 bg-[#F39C12] text-gray-900 rounded-full text-sm font-semibold mb-4">
           CUSTOMER TESTIMONIALS
-        </span>
+        </h1>
         <h2 className="text-4xl font-bold mb-4" style={{ color: "#F39C12", fontFamily: "Roboto, sans-serif" }}>
           What Our Clients Say
         </h2>
-        <p className="text-lg text-gray-300 max-w-3xl mx-auto" style={{ fontFamily: "Montserrat, sans-serif" }}>
+        <h3 className="text-lg text-gray-100 max-w-3xl mx-auto" style={{ fontFamily: "Montserrat, sans-serif" }}>
           Read about the experiences of fleet managers and truck operators who rely on our services to keep their business moving.
-        </p>
+        </h3>
       </motion.div>
 
       {/* Testimonial Slider */}
-      <div className="relative max-w-5xl mx-auto">
+      <div className="relative max-w-5xl mx-auto px-4">
         <div className="overflow-hidden">
           <motion.div
             className="flex"
@@ -77,13 +77,13 @@ export default function Testimonials() {
             transition={{ duration: 0.5 }}
           >
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="min-w-full px-4 flex-shrink-0">
+              <div key={index} className=" max-w-full md:min-w-full px-4 flex-shrink-0">
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="bg-neutral-700 rounded-lg p-8 shadow-lg">
                   <p className="text-white text-lg">{testimonial.content}</p>
                   <div className="mt-4">
                     <p className="text-[#F39C12] font-semibold">{testimonial.name}</p>
-                    <p className="text-gray-400 text-sm">{testimonial.role}</p>
-                    <p className="text-gray-500 text-xs">{testimonial.date}</p>
+                    <p className="text-gray-100 text-sm">{testimonial.role}</p>
+                    <p className="text-gray-100 text-xs">{testimonial.date}</p>
                   </div>
                 </motion.div>
               </div>
@@ -93,40 +93,46 @@ export default function Testimonials() {
 
         {/* Slider Controls */}
        {/* Slider Controls */}
-<button
+       <button
   onClick={prevSlide}
-  className="absolute top-1/2 left-2 md:-left-8 transform -translate-y-1/2 bg-[#1A3E6C] text-white w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center hover:bg-[#F39C12] transition duration-300"
+  className="absolute top-1/2 left-2 md:-left-8 transform -translate-y-1/2 bg-[#1A3E6C] text-gray-300 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center hover:bg-[#F39C12] transition duration-300"
+  aria-label="Previous slide"
 >
   <FaChevronLeft size={20} />
 </button>
 <button
   onClick={nextSlide}
-  className="absolute top-1/2 right-2 md:-right-8 transform -translate-y-1/2 bg-[#1A3E6C] text-white w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center hover:bg-[#F39C12] transition duration-300"
+  className="absolute top-1/2 right-2 md:-right-8 transform -translate-y-1/2 bg-[#1A3E6C] text-gray-300 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center hover:bg-[#F39C12] transition duration-300"
+  aria-label="Next slide"
 >
   <FaChevronRight size={20} />
 </button>
+
 
 
         {/* Slider Indicators */}
         <div className="flex justify-center mt-8 space-x-2">
           {testimonials.map((_, index) => (
             <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full ${index === currentIndex ? "bg-[#F39C12]" : "bg-neutral-600"}`}
-            />
+            onClick={() => goToSlide(index)}
+            key={index}
+            className={`w-8 h-8 md:w-10 md:h-10 rounded-full ${index === currentIndex ? "bg-[#F39C12]" : "bg-neutral-600"} mx-2`}
+            aria-label={`Go to slide ${index + 1}`}
+            aria-current={index === currentIndex ? "true" : "false"}
+          />
+          
           ))}
         </div>
       </div>
 
       {/* Review Summary Stats */}
-      <motion.div initial={{ opacity: 0 ,x:-40 }} whileInView={{ opacity: 1 ,x:0}} viewport={{ once: false, amount: 0.5 }} transition={{duration:1.2}} className="mt-20 max-w-5xl mx-auto">
+      <motion.div initial={{ opacity: 0 ,x:-40 }} whileInView={{ opacity: 1 ,x:0}} viewport={{ once: false, amount: 0.5 }} transition={{duration:1.2}} className="mt-20 max-w-5xl mx-auto px-2">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Star Ratings */}
           <motion.div initial={{ x: -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} className="bg-neutral-700 p-8 rounded-lg">
-            <h3 className="text-xl font-bold text-white mb-4">Customer Ratings</h3>
-            {starRatings.map((rating) => (
-              <div key={rating.stars} className="flex items-center gap-2 text-white">
+            <h2 className="text-xl font-bold text-white mb-4">Customer Ratings</h2>
+            {starRatings.map((rating,index) => (
+              <div key={index} className="flex items-center gap-2 text-white">
                 <span className="text-lg">{rating.stars} ⭐</span>
                 <div className="w-full bg-gray-600 h-2 rounded-full overflow-hidden">
                   <div className="bg-[#F39C12] h-2" style={{ width: `${rating.percentage}%` }}></div>
@@ -137,7 +143,7 @@ export default function Testimonials() {
           </motion.div>
 
           {/* Service Highlights */}
-          <motion.div initial={{ x: 60, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }}  transition={{duration:1.2}}className="space-y-6">
+          <motion.div initial={{ x: 30, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }}  transition={{duration:1.2}}className="space-y-6 px-2">
             <h3 className="text-xl font-bold text-white">Why Customers Choose Us</h3>
             <ul className="text-gray-300 list-disc pl-5 space-y-2">
               <li>Fast response time</li>
@@ -148,6 +154,6 @@ export default function Testimonials() {
           </motion.div>
         </div>
       </motion.div>
-    </div>
+    </section>
   );
 }
