@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet';
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -9,6 +10,17 @@ const FAQ = () => {
   };
 
   return (
+    <>
+    {/* Helmet is used to define the document head metadata */}
+<Helmet>
+     <title>Logistics Company - Reliable & Fast Services</title>
+     <meta name="description" content="We provide the best logistics services with reliability and efficiency." />
+     <meta 
+          name="keywords" 
+          content="truck repair services, fleet maintenance, emergency roadside assistance, heavy-duty truck repair, commercial vehicle servicing, diesel engine diagnostics, mobile truck repair, semi-truck maintenance, transmission repair, best logistics company, truck towing, certified truck technicians, 24/7 truck repair, DOT inspections, fleet manager reviews, truck roadside assistance ratings, preventive truck maintenance, heavy truck breakdown service, logistics support for trucking companies" 
+        />    
+         <meta name="author" content="Truck and trailer repair" />
+   </Helmet>
     <section name="FAQ"  className="py-20 bg-neutral-800 text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
@@ -107,7 +119,7 @@ const FAQ = () => {
      </motion.div>
 
       </motion.div>
-    </section>
+    </section></>
   );
 };
 
@@ -137,7 +149,7 @@ const faqData = [
   {
     question: 'What services can be performed roadside vs. at your facilities?',
     answer: (
-      <>
+      <div>
         <strong>Our roadside services include:</strong>
         <ul className="list-disc pl-5 text-gray-300 space-y-2 mb-4">
           <motion.li initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }}>
@@ -187,7 +199,7 @@ const faqData = [
             Major component replacements
           </motion.li>
         </ul>
-      </>
+      </div>
     ),
   },
   // More FAQ items can be added here

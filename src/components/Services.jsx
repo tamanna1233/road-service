@@ -5,6 +5,7 @@ import { TbAirConditioning } from "react-icons/tb";
 import { PiCarBatteryFill ,PiTruckTrailer,PiEngineBold} from "react-icons/pi";
 import { RiOilFill } from "react-icons/ri";
 import { BsTruckFlatbed } from "react-icons/bs";
+import { Helmet } from "react-helmet";
 const services = [
   { id: 1, title: "Wheel laser alignment", icon: <GiCarWheel/>, description: "Expert engine diagnostics and repair services." },
   { id: 2, title: "New tires installation", icon: <GiTyre />, description: "Quick and efficient oil change to keep your truck running smoothly." },
@@ -68,6 +69,14 @@ const ServiceCard = ({ title, icon, description }) => {
 
 const ServicesSection = () => {
   return (
+<>
+     {/* Helmet is used to define the document head metadata */}
+     <Helmet>
+     <title>Logistics Company - Reliable & Fast Services</title>
+     <meta name="description" content="We provide the best logistics services with reliability and efficiency." />
+     <meta name="keywords" content="truck repair, mobile truck repair, trailer repair, roadside assistance, wheel alignment, new tires, oil change, hydraulic repair, battery replacement, radiator repair, air conditioning, towing services, brake repair, landing gear repair, reefer repair, electrical system repair, tailgate repair, truck maintenance, heavy-duty truck repair" />
+     <meta name="author" content="Truck and trailer repair " />
+   </Helmet>
     <section name="Services" className="py-16 bg-gray-900">
       <div className="container mx-auto px-6">
         <motion.h2 
@@ -85,6 +94,7 @@ const ServicesSection = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

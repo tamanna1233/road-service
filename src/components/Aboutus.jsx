@@ -4,6 +4,7 @@ import { LiaCertificateSolid } from "react-icons/lia";
 import { IoMdTime } from "react-icons/io";
 import { CiLocationOn } from "react-icons/ci";
 import { FaBolt, FaUser } from "react-icons/fa6";
+import { Helmet } from "react-helmet";
 const AboutUs = () => {
   const services = [
     { id: 1, title: "Certified Excellence", icon: <LiaCertificateSolid /> , description: "All our technicians are ASE-certified with regular training on the latest vehicle technologies" },
@@ -66,6 +67,14 @@ const teamStats=[
 ]
 
   return (
+    <>
+    {/* Helmet is used to define the document head metadata */}
+<Helmet>
+     <title>Logistics Company - Reliable & Fast Services</title>
+     <meta name="description" content="We provide the best logistics services with reliability and efficiency." />
+     <meta name="keywords" content="truck repair services, fleet maintenance, roadside assistance, heavy-duty truck repair, emergency truck service, commercial truck maintenance, certified truck technicians, ASE-certified technicians, 24/7 truck repair, mobile truck repair, diesel engine diagnostics, transmission repair, towing and recovery services, preventive truck maintenance, best logistics services, truck service ratings, fleet manager reviews, nationwide truck repair network, truck and trailer repair experts, reliable truck servicing" />     <meta name="author" content="Truck and trailer repair" />
+   </Helmet>
+    
     <section name="About Us" className="grid grid-cols-1 lg:grid-cols-2 place-content-center gap-x-24 px-8 bg-white py-12 ">
       <motion.div 
         className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8"
@@ -184,6 +193,7 @@ Our team of ASE-certified technicians specializes in all aspects of commercial v
       
       
     </section>
+    </>
   );
 };
 

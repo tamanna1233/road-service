@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 const testimonials = [
   {
@@ -50,6 +51,15 @@ export default function Testimonials() {
   };
 
   return (
+<>
+{/* Helmet is used to define the document head metadata */}
+<Helmet>
+     <title>Logistics Company - Reliable & Fast Services</title>
+     <meta name="description" content="We provide the best logistics services with reliability and efficiency." />
+     <meta name="keywords" content="customer testimonials, truck repair reviews, fleet maintenance feedback, emergency roadside assistance, heavy-duty truck repair, best logistics services, truck service ratings, fleet manager reviews, truck maintenance experiences, transmission repair testimonials, towing service ratings, truck roadside assistance reviews, 5-star truck repair service" />
+     <meta name="author" content="Truck and trailer repair" />
+   </Helmet>
+
     <section name="Testimonial" className="  py-16 bg-black ">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -155,5 +165,6 @@ export default function Testimonials() {
         </div>
       </motion.div>
     </section>
+    </>
   );
 }
