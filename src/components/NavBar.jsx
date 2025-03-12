@@ -1,10 +1,36 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link as ScrollLink, scroller } from "react-scroll";
+import { scroller } from "react-scroll";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navItems = ["Home", "Services", "About Us", "Testimonial", "Contact", "FAQ"];
+
+  // Stagger effect variants
+  const menuVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        staggerChildren: 0.15, // Delay between child animations
+      },
+    },
+    exit: {
+      opacity: 0,
+      y: -20,
+      transition: {
+        staggerChildren: 0.1, // Stagger effect on exit
+        staggerDirection: -1, // Reverse stagger on exit
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -10 },
+  };
 
   return (
     <div className="fixed w-full z-50">
@@ -19,7 +45,6 @@ export default function Navbar() {
 
               return (
                 <li key={index}>
-                  {/* SEO & React-Scroll Hybrid */}
                   <a
                     href={`/#${formattedName}`}
                     onClick={(e) => {
@@ -54,22 +79,21 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Navigation Menu with Staggered Effect */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={menuVariants}
             className="absolute top-16 left-0 w-full bg-gradient-to-r from-neutral-900 to-neutral-800 text-white md:hidden p-4 z-50"
           >
             <motion.ul className="flex flex-col space-y-4">
               {navItems.map((name, index) => {
                 const formattedName = name.toLowerCase().replace(/\s+/g, "-");
-
                 return (
-                  <motion.li key={index}>
-                    {/* SEO & React-Scroll Hybrid */}
+                  <motion.li key={index} variants={itemVariants}>
                     <a
                       href={`/#${formattedName}`}
                       onClick={(e) => {
@@ -79,7 +103,7 @@ export default function Navbar() {
                           duration: 500,
                           offset: -70,
                         });
-                        setIsMenuOpen(false); // Close menu after click
+                        setIsMenuOpen(false);
                       }}
                       className="text-white hover:text-blue-600 block"
                     >
