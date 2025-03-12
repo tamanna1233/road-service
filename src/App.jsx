@@ -1,9 +1,10 @@
 
-import { lazy } from 'react'
+import { lazy ,Suspense} from 'react'
 import './App.css'
-import FAQ from './components/FAQ'
-import Contact from './components/Contact'
-import Gallery from "./components/Gallery"
+import Loadinganimation from './components/Loadinganimation'
+const FAQ =lazy(()=>import('./components/FAQ')) 
+const Contact =lazy(()=>import('./components/Contact') )
+const  Gallery =lazy(()=>import("./components/Gallery")) 
 
 const Home =lazy(()=>import('./components/Home'))
 const Navbar =lazy(()=>import('./components/NavBar'))
@@ -16,7 +17,7 @@ const Footer =lazy(()=>import('./components/Footer'))
 function App() {
 
   return (
-<>
+<Suspense fallback={<Loadinganimation/>}>
 <Navbar/>
 <Home/>
 <ServicesSection/>
@@ -25,7 +26,7 @@ function App() {
 <Contact/>
 <FAQ/>
 <Footer/>
-</>      
+</Suspense>      
   )
 }
 
