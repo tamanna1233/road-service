@@ -15,9 +15,14 @@ const Home = () => {
 
     </Helmet>
       {/* Background with overlay */}
-      <div className="absolute inset-0 bg-fixed bg-gradient-to-r from-neutral-900 to-neutral-800">
+            <div className="absolute inset-0 bg-gradient-to-r from-neutral-900 to-neutral-800">
         <div className="absolute inset-0 bg-neutral-900 opacity-60"></div>
+        {/* Custom background shape */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik00LjUuNWg1MVY1NmwtNTEtLjVWLjV6IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjIiIC8+CiAgICA8cGF0aCBkPSJNMzAgMzBjOS45NCAwIDE4LTguMDYgMTgtMThTMzkuOTQgLTYgMzAgLTZTMTIgMi4wNiAxMiAxMnM4LjA2IDE4IDE4IDE4eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4xNSIvPgogICAgPHBhdGggZD0iTTQwIDQwYzkuOTQgMCAxOC04LjA2IDE4LTE4UzQ5Ljk0IDQgNDAgNFMyMiAxMi4wNiAyMiAyMnM4LjA2IDE4IDE4IDE4eiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4xNSIvPgo8L3N2Zz4=')] bg-repeat"></div>
+        </div>
       </div>
+
 
       {/* Content */}
       <section className='relative w-full'>
