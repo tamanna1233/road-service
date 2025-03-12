@@ -42,8 +42,9 @@ export default function Navbar() {
           <ul className="flex space-x-6">
             {navItems.map((name, index) => (
               <li key={index}>
-                <Link to={name} smooth={true} aria-label={`${name}`} className="text-white hover:text-blue-600 underline cursor-pointer">
-                  {name}
+                <Link to={`#${name}`} smooth={true} aria-label={`${name}`} className="text-white hover:text-blue-600 underline cursor-pointer">
+                <a href={`#${name.toLowerCase().replace(/\s+/g, "-")}`} className="text-white hover:text-blue-600 underline">
+                {name}</a> 
                 </Link>
               </li>
             ))}

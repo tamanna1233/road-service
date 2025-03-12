@@ -4,8 +4,6 @@ import './App.css'
 import Loadinganimation from './components/Loadinganimation'
 const FAQ =lazy(()=>import('./components/FAQ')) 
 const Contact =lazy(()=>import('./components/Contact') )
-const  Gallery =lazy(()=>import("./components/Gallery")) 
-
 const Home =lazy(()=>import('./components/Home'))
 const Navbar =lazy(()=>import('./components/NavBar'))
 const ServicesSection =lazy(()=>import('./components/Services'))
@@ -18,6 +16,7 @@ function App() {
 
   return (
 <Suspense fallback={<Loadinganimation/>}>
+
 <Navbar/>
 <Home/>
 <ServicesSection/>

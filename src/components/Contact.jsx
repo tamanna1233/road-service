@@ -1,9 +1,15 @@
 import { motion } from 'framer-motion';
 import { PiPhone, PiPhoneCall } from 'react-icons/pi';
-
+import { Helmet } from 'react-helmet';
 const Contact = () => {
   return (
-    <section name="Contact" className="text-black py-16 px-6 md:px-12 lg:px-24">
+    <section name="#Contact" className="text-black py-16 px-6 md:px-12 lg:px-24">
+       <Helmet>
+      {/* Basic SEO */}
+      <title>24/7 Truck Logistics & Fleet Support | Reliable Truck Repair Services</title>
+      <meta name="description" content="Get professional truck logistics services, including fleet management, emergency roadside assistance, and truck repair solutions. Contact us today!" />
+      <meta name="keywords" content="truck logistics, fleet management, freight transportation, truck repair, roadside assistance, commercial vehicle support" />
+    </Helmet>
       <motion.div 
         initial={{ opacity: 0, y: 50 }} 
         whileInView={{ opacity: 1, y: 0 }} 

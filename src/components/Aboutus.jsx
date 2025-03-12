@@ -66,7 +66,7 @@ const teamStats=[
 ]
 
   return (
-    <section name="About Us" className="grid grid-cols-1 lg:grid-cols-2 place-content-center gap-x-24 px-8 bg-white py-12 ">
+    <section name="#About Us" className="grid grid-cols-1 lg:grid-cols-2 place-content-center gap-x-24 px-8 bg-white py-12 ">
       <motion.div 
         className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8"
         initial={{ opacity: 0, y: 30 }}

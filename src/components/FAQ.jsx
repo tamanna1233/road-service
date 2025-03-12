@@ -9,7 +9,7 @@ const FAQ = () => {
   };
 
   return (
-    <section name="FAQ"  className="py-20 bg-neutral-800 text-white">
+    <section name="#FAQ"  className="py-20 bg-neutral-800 text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1 bg-[#F39C12] text-gray-900 rounded-full text-sm font-semibold mb-4">

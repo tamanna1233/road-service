@@ -68,7 +68,7 @@ const ServiceCard = ({ title, icon, description }) => {
 
 const ServicesSection = () => {
   return (
-    <section name="Services" className="py-16 bg-gray-900">
+    <section name="#Services" className="py-16 bg-gray-900">
       <div className="container mx-auto px-6">
         <motion.h2 
           className="text-3xl md:text-4xl font-bold text-center text-white mb-12"

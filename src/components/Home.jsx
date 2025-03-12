@@ -1,10 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import truckimage from '../assets/fast-delivery.png';
-
+import { Helmet } from 'react-helmet';
 const Home = () => {
   return (
-    <section name="Home" className='relative h-full flex items-center justify-start'>
+    <section name="#Home" className='relative h-full flex items-center justify-start'>
+     <Helmet>
+      {/* Primary Meta Tags */}
+      <title>24/7 Emergency Truck Repair & Roadside Assistance | Fast & Reliable</title>
+      <meta name="description" content="Get 24/7 emergency truck repair and roadside assistance for semi-trucks, diesel trucks, and commercial fleets. Fast, reliable, and professional service nationwide." />
+      <meta name="keywords" content="truck repair, emergency truck repair, mobile truck repair, semi-truck repair, diesel truck repair, roadside assistance, fleet maintenance, logistics support" />
+      <meta name="author" content="Your Company Name" />
+      <meta name="robots" content="index, follow" />
+
+    </Helmet>
       {/* Background with overlay */}
       <div className="absolute inset-0 bg-fixed bg-gradient-to-r from-neutral-900 to-neutral-800">
         <div className="absolute inset-0 bg-neutral-900 opacity-60"></div>
