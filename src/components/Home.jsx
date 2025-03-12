@@ -4,7 +4,7 @@ import truckimage from '../assets/fast-delivery.png';
 import { Helmet } from 'react-helmet';
 const Home = () => {
   return (
-    <section name="#Home" className='relative h-full flex items-center justify-start'>
+    <section name="home" className='relative h-full flex items-center justify-start'>
      <Helmet>
       {/* Primary Meta Tags */}
       <title>24/7 Emergency Truck Repair & Roadside Assistance | Fast & Reliable</title>

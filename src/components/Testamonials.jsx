@@ -60,7 +60,7 @@ export default function Testimonials() {
      <meta name="author" content="Truck and trailer repair" />
    </Helmet>
 
-    <section name="#Testimonial" className="  py-16 bg-black ">
+    <section name="testimonial" className="  py-16 bg-black ">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

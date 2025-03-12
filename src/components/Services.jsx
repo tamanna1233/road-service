@@ -77,7 +77,7 @@ const ServicesSection = () => {
      <meta name="keywords" content="truck repair, mobile truck repair, trailer repair, roadside assistance, wheel alignment, new tires, oil change, hydraulic repair, battery replacement, radiator repair, air conditioning, towing services, brake repair, landing gear repair, reefer repair, electrical system repair, tailgate repair, truck maintenance, heavy-duty truck repair" />
      <meta name="author" content="Truck and trailer repair " />
    </Helmet>
-    <section name="#Services" className="py-16 bg-gray-900">
+    <section name="services" className="py-16 bg-gray-900">
       <div className="container mx-auto px-6">
         <motion.h2 
           className="text-3xl md:text-4xl font-bold text-center text-white mb-12"

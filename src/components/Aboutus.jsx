@@ -75,7 +75,7 @@ const teamStats=[
      <meta name="keywords" content="truck repair services, fleet maintenance, roadside assistance, heavy-duty truck repair, emergency truck service, commercial truck maintenance, certified truck technicians, ASE-certified technicians, 24/7 truck repair, mobile truck repair, diesel engine diagnostics, transmission repair, towing and recovery services, preventive truck maintenance, best logistics services, truck service ratings, fleet manager reviews, nationwide truck repair network, truck and trailer repair experts, reliable truck servicing" />     <meta name="author" content="Truck and trailer repair" />
    </Helmet>
     
-    <section name="#About Us" className="grid grid-cols-1 lg:grid-cols-2 place-content-center gap-x-24 px-8 bg-white py-12 ">
+    <section name="about-us" className="grid grid-cols-1 lg:grid-cols-2 place-content-center gap-x-24 px-8 bg-white py-12 ">
       <motion.div 
         className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8"
         initial={{ opacity: 0, y: 30 }}

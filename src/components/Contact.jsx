@@ -3,7 +3,7 @@ import { PiPhone, PiPhoneCall } from 'react-icons/pi';
 import { Helmet } from 'react-helmet';
 const Contact = () => {
   return (
-    <section name="#Contact" className="text-black py-16 px-6 md:px-12 lg:px-24">
+    <section name="contact" className="text-black py-16 px-6 md:px-12 lg:px-24">
        <Helmet>
       {/* Basic SEO */}
       <title>24/7 Truck Logistics & Fleet Support | Reliable Truck Repair Services</title>
