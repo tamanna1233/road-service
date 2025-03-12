@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-scroll";
+import { Link as ScrollLink, scroller } from "react-scroll";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,22 +19,21 @@ export default function Navbar() {
 
               return (
                 <li key={index}>
-                  {/* SEO-Friendly <a> Tag */}
-                  <a href={`/#${formattedName}`} className="hidden">
-                    {name}
-                  </a>
-
-                  {/* React-Scroll Link */}
-                  <Link
-                    to={formattedName}
-                    smooth={true}
-                    duration={500}
-                    spy={true}
-                    offset={-70}
+                  {/* SEO & React-Scroll Hybrid */}
+                  <a
+                    href={`/#${formattedName}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scroller.scrollTo(formattedName, {
+                        smooth: true,
+                        duration: 500,
+                        offset: -70,
+                      });
+                    }}
                     className="cursor-pointer text-white hover:text-blue-600 underline"
                   >
                     {name}
-                  </Link>
+                  </a>
                 </li>
               );
             })}
@@ -70,22 +69,22 @@ export default function Navbar() {
 
                 return (
                   <motion.li key={index}>
-                    {/* SEO-Friendly <a> Tag for Crawlers */}
-                    <a href={`/#${formattedName}`} className="hidden">
-                      {name}
-                    </a>
-
-                    {/* React-Scroll Link */}
-                    <Link
-                      to={formattedName}
-                      smooth={true}
-                      duration={500}
-                      spy={true}
-                      offset={-70}
+                    {/* SEO & React-Scroll Hybrid */}
+                    <a
+                      href={`/#${formattedName}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scroller.scrollTo(formattedName, {
+                          smooth: true,
+                          duration: 500,
+                          offset: -70,
+                        });
+                        setIsMenuOpen(false); // Close menu after click
+                      }}
                       className="text-white hover:text-blue-600 block"
                     >
                       {name}
-                    </Link>
+                    </a>
                   </motion.li>
                 );
               })}

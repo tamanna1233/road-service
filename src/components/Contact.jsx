@@ -74,8 +74,8 @@ const Contact = () => {
         >
           {/* Emergency Support */}
           <motion.div className="bg-red-600 rounded-2xl p-6 border-l-6 border-orange-700">
-            <div className="flex items-center gap-3">
-              <PiPhone size={35} color="red" className="bg-white w-18 h-18 p-2 rounded-full" />
+            <div className=" flex-col md:flex-row flex justify-items-center items-center gap-3">
+              <PiPhone size={25} color="red" className="bg-white w-12 md:w-18 h-12 md:h-18 p-2 rounded-full" />
               <div>
                 <h1 className="text-white font-bold text-lg">24/7 Emergency Support</h1>
                 <h2 className="text-white text-sm">Immediate assistance for roadside emergencies</h2>

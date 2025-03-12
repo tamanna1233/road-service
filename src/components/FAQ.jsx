@@ -109,7 +109,7 @@ const FAQ = () => {
         </div>
       </div>
 
-      <motion.div className='grid place-items-center py-12 rounded-2xl mx-auto  w-6/11 px-4 bg-neutral-700 mt-12'>
+      <motion.div className='grid place-items-center py-12 rounded-2xl mx-auto w-full md:w-6/11 px-4  bg-neutral-700 mt-12'>
      <motion.h1 className='text-2xl text-yellow-500 font-bold'>Still Have Questions?</motion.h1>
      <motion.h2>Can't find the answer you're looking for? Our team is here to help with any specific questions about our services.</motion.h2>
      <motion.div className='flex gap-4 justify-center items-center mt-4'>
