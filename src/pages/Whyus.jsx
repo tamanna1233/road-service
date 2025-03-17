@@ -14,7 +14,7 @@ export default function WhyChooseUs() {
       }}
     >
       {/* Dark Overlay for Readability */}
-      <div className="bg-black/70 p-8 rounded-lg shadow-lg">
+      <div className="p-8 ">
         {/* Heading */}
         <motion.h1
           className="text-4xl font-extrabold text-[#F39C12] mb-8 text-center border-b-4 border-[#F39C12] pb-2 inline-block"
