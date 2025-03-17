@@ -1,0 +1,7 @@
+
+{
+    "entry": ["src/**/*.{js,jsx,ts,tsx}"],
+    "ignore": ["**/*.test.{ts,tsx}", "**/node_modules/** "],
+    "extensions": [".js", ".jsx", ".ts", ".tsx"]
+  }
+  

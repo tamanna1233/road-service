@@ -1,24 +1,22 @@
 import { motion } from 'framer-motion';
 import { PiPhone, PiPhoneCall } from 'react-icons/pi';
-import { Helmet } from 'react-helmet';
 const Contact = () => {
   return (
-    <section name="contact" className="text-black py-16 px-6 md:px-12 lg:px-24">
-       <Helmet>
+    <section name="contact" className="text-black py-20 px-6 md:px-12 lg:px-24">
+    
       {/* Basic SEO */}
       <title>24/7 Truck Logistics & Fleet Support | Reliable Truck Repair Services</title>
       <meta name="description" content="Get professional truck logistics services, including fleet management, emergency roadside assistance, and truck repair solutions. Contact us today!" />
       <meta name="keywords" content="truck logistics, fleet management, freight transportation, truck repair, roadside assistance, commercial vehicle support" />
-    </Helmet>
+ 
       <motion.div 
         initial={{ opacity: 0, y: 50 }} 
-        whileInView={{ opacity: 1, y: 0 }} 
+        animate={{ opacity: 1, y: 0 }} 
         transition={{ duration: 0.8 }}
         className="max-w-4xl mx-auto text-center"
       >
-        <h1 className='p-2 bg-black text-white rounded-xl w-52 text-center mx-auto'>Get In Touch</h1>
         <h2 className="text-4xl font-bold mb-6">Contact Us</h2>
-        <h3 className="text-gray-300 mb-8">
+        <h3 className="text-black mb-8">
           Need assistance with your fleet or have questions about our services? Reach out to our team for prompt and professional support.
         </h3>
       </motion.div>
@@ -27,7 +25,7 @@ const Contact = () => {
         {/* Contact Form */}
         <motion.div 
           initial={{ opacity: 0, y: 50 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
+          animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 0.8, delay: 0.2 }}
           className="bg-gray-800 p-8 rounded-lg text-white shadow-lg"
         >
@@ -68,7 +66,7 @@ const Contact = () => {
         {/* Contact Information */}
         <motion.div 
           initial={{ opacity: 0, y: 50 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
+          animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 0.8, delay: 0.3 }}
           className="space-y-6"
         >

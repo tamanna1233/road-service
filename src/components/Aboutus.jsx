@@ -4,7 +4,7 @@ import { LiaCertificateSolid } from "react-icons/lia";
 import { IoMdTime } from "react-icons/io";
 import { CiLocationOn } from "react-icons/ci";
 import { FaBolt, FaUser } from "react-icons/fa6";
-import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 const AboutUs = () => {
   const services = [
     { id: 1, title: "Certified Excellence", icon: <LiaCertificateSolid /> , description: "All our technicians are ASE-certified with regular training on the latest vehicle technologies" },
@@ -16,17 +16,16 @@ const AboutUs = () => {
   const AboutusCard=({ title, icon, description })=>{
     return(
       <motion.div
-      className="bg-gray-100 text-black p-6 rounded-xl shadow-lg flex flex-col items-center text-center"
-      whileHover={{ scale: 1.08, rotate: 2 }} // Slight tilt & scale on hover
+      className="bg-[#262626] text-white p-6 rounded-xl shadow-lg flex flex-col items-center text-center"
       transition={{ duration: 0.4, ease: "easeInOut" }} // Faster hover effect
       initial={{ opacity: 0, y: 50, scale: 0.95 }} // Starts slightly lower & smaller
-      whileInView={{ opacity: 1, y: 0, scale: 1 }} // Smooth reveal
+      animate={{ opacity: 1, y: 0, scale: 1 }} // Smooth reveal
       viewport={{ once: false, amount: 0.3 }} // Repeats when scrolled into view
     >
       <motion.div
-        className="text-4xl text-blue-400 mb-4 grid  place-items-center gap-x-2 "
+        className="text-4xl text-yellow-400 mb-4 grid  place-items-center gap-x-2 "
         initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }} // Smooth scaling
       >
         <div className="bg-black rounded-full text-2xl w-20 h-20 flex items-center justify-center  p-4">
@@ -35,7 +34,7 @@ const AboutUs = () => {
         <motion.h1
         className="text-xl font-bold mb-2 "
         initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }} // Delayed text appearance
       >
         {title}
@@ -43,9 +42,9 @@ const AboutUs = () => {
       </motion.div>
       
       <motion.h2
-        className="text-black"
+        className="text-white"
         initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }} // Delayed paragraph appearance
       >
         {description}
@@ -69,30 +68,30 @@ const teamStats=[
   return (
     <>
     {/* Helmet is used to define the document head metadata */}
-<Helmet>
+
      <title>Logistics Company - Reliable & Fast Services</title>
      <meta name="description" content="We provide the best logistics services with reliability and efficiency." />
      <meta name="keywords" content="truck repair services, fleet maintenance, roadside assistance, heavy-duty truck repair, emergency truck service, commercial truck maintenance, certified truck technicians, ASE-certified technicians, 24/7 truck repair, mobile truck repair, diesel engine diagnostics, transmission repair, towing and recovery services, preventive truck maintenance, best logistics services, truck service ratings, fleet manager reviews, nationwide truck repair network, truck and trailer repair experts, reliable truck servicing" />     <meta name="author" content="Truck and trailer repair" />
-   </Helmet>
+  
     
-    <section name="about-us" className="grid grid-cols-1 lg:grid-cols-2 place-content-center gap-x-24 px-8 bg-white py-12 ">
+    <section name="about-us" className="grid grid-cols-1 lg:grid-cols-2 place-content-center gap-x-24 px-8 bg-white py-20 ">
       <motion.div 
         className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8"
         initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: false ,amount:0.3}}
       >
         <motion.div 
           className="bg-[#262626] p-6 rounded-lg shadow-lg min-w-xs max-w-lg min-h-72 flex justify-start items-start flex-col"
           initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false ,amount:0.3}}
         >
           <motion.div
             initial={{ rotate: 0 }}
-            whileInView={{ rotate: 360 }}
+            animate={{ rotate: 360 }}
             transition={{ duration: 1, repeat: 0 }}
             viewport={{ once:false ,amount:0.3}}
           >
@@ -114,14 +113,14 @@ const teamStats=[
       <motion.div
         className="max-w-5xl mx-auto text-center grid grid-cols-1"
         initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: false ,amount:0.3}}
       >
         <motion.h2 
           className="text-4xl font-bold text-gray-900 "
           initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false ,amount:0.3}}
         >
@@ -131,7 +130,7 @@ const teamStats=[
         <motion.p 
           className="text-gray-700 text-lg  text-start"
           initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: false ,amount:0.3}}
         >
@@ -151,7 +150,7 @@ Our team of ASE-certified technicians specializes in all aspects of commercial v
   <motion.h1 
     className="text-4xl font-bold text-gray-900 text-center"
     initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
+    animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6 }}
     viewport={{ once: false, amount: 0.3 }}
   >
@@ -170,7 +169,7 @@ Our team of ASE-certified technicians specializes in all aspects of commercial v
   <motion.h1 
     className="text-4xl font-bold text-gray-900 text-center"
     initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
+    animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6 }}
     viewport={{ once: false, amount: 0.3 }}
   >
@@ -187,7 +186,9 @@ Our team of ASE-certified technicians specializes in all aspects of commercial v
 </motion.div>
 
      <motion.div className=" col-span-full flex justify-center items-center mt-8">
+      <Link to={"/contact"}>
         <button className="bg-black  rounded-md text-white p-4"> Contact our Team </button>
+      </Link>
       </motion.div>  
 
       

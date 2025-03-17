@@ -1,7 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { Helmet } from "react-helmet";
 
 const testimonials = [
   {
@@ -53,14 +52,13 @@ export default function Testimonials() {
   return (
 <>
 {/* Helmet is used to define the document head metadata */}
-<Helmet>
+
      <title>Logistics Company - Reliable & Fast Services</title>
      <meta name="description" content="We provide the best logistics services with reliability and efficiency." />
      <meta name="keywords" content="customer testimonials, truck repair reviews, fleet maintenance feedback, emergency roadside assistance, heavy-duty truck repair, best logistics services, truck service ratings, fleet manager reviews, truck maintenance experiences, transmission repair testimonials, towing service ratings, truck roadside assistance reviews, 5-star truck repair service" />
      <meta name="author" content="Truck and trailer repair" />
-   </Helmet>
 
-    <section name="testimonial" className="  py-16 bg-black ">
+    <section name="testimonial" className="  py-20 bg-black ">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -136,10 +134,10 @@ export default function Testimonials() {
       </div>
 
       {/* Review Summary Stats */}
-      <motion.div initial={{ opacity: 0 ,x:-40 }} whileInView={{ opacity: 1 ,x:0}} viewport={{ once: false, amount: 0.5 }} transition={{duration:1.2}} className="mt-20 max-w-5xl mx-auto px-2">
+      <motion.div initial={{ opacity: 0 ,x:-40 }} animate={{ opacity: 1 ,x:0}} viewport={{ once: false, amount: 0.5 }} transition={{duration:1.2}} className="mt-20 max-w-5xl mx-auto px-2">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Star Ratings */}
-          <motion.div initial={{ x: -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} className="bg-neutral-700 p-8 rounded-lg">
+          <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} className="bg-neutral-700 p-8 rounded-lg">
             <h2 className="text-xl font-bold text-white mb-4">Customer Ratings</h2>
             {starRatings.map((rating,index) => (
               <div key={index} className="flex items-center gap-2 text-white">
@@ -153,7 +151,7 @@ export default function Testimonials() {
           </motion.div>
 
           {/* Service Highlights */}
-          <motion.div initial={{ x: 30, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }}  transition={{duration:1.2}}className="space-y-6 px-2">
+          <motion.div initial={{ x: 30, opacity: 0 }} animate={{ x: 0, opacity: 1 }}  transition={{duration:1.2}}className="space-y-6 px-2">
             <h3 className="text-xl font-bold text-white">Why Customers Choose Us</h3>
             <ul className="text-gray-300 list-disc pl-5 space-y-2">
               <li>Fast response time</li>

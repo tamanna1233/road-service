@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet';
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -12,7 +11,7 @@ const FAQ = () => {
   return (
     <>
     {/* Helmet is used to define the document head metadata */}
-<Helmet>
+
      <title>Logistics Company - Reliable & Fast Services</title>
      <meta name="description" content="We provide the best logistics services with reliability and efficiency." />
      <meta 
@@ -20,7 +19,7 @@ const FAQ = () => {
           content="truck repair services, fleet maintenance, emergency roadside assistance, heavy-duty truck repair, commercial vehicle servicing, diesel engine diagnostics, mobile truck repair, semi-truck maintenance, transmission repair, best logistics company, truck towing, certified truck technicians, 24/7 truck repair, DOT inspections, fleet manager reviews, truck roadside assistance ratings, preventive truck maintenance, heavy truck breakdown service, logistics support for trucking companies" 
         />    
          <meta name="author" content="Truck and trailer repair" />
-   </Helmet>
+
     <section name="faq"  className="py-20 bg-neutral-800 text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">

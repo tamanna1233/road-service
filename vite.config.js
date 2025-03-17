@@ -8,12 +8,14 @@ export default defineConfig({
   plugins: [react(),
     tailwindcss(),
     viteCompression({ algorithm: 'brotliCompress', threshold: 10240 })
+    
   ],
 
   build:{
     minify: 'esbuild', // Use esbuild for faster minification
     target: 'esnext', 
     rollupOptions: {
+      treeshake:true,
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {

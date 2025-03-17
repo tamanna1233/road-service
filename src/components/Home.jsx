@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import truckimage from '../assets/fast-delivery.png';
-import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <section name="home" className='relative h-full flex items-center justify-start'>
-     <Helmet>
+    
       {/* Primary Meta Tags */}
       <title>24/7 Emergency Truck Repair & Roadside Assistance | Fast & Reliable</title>
       <meta name="description" content="Get 24/7 emergency truck repair and roadside assistance for semi-trucks, diesel trucks, and commercial fleets. Fast, reliable, and professional service nationwide." />
@@ -13,7 +13,7 @@ const Home = () => {
       <meta name="author" content="Your Company Name" />
       <meta name="robots" content="index, follow" />
 
-    </Helmet>
+   
       {/* Background with overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-neutral-900 to-neutral-800">
         <div className="absolute inset-0 bg-neutral-900 opacity-60"></div>
@@ -29,14 +29,14 @@ const Home = () => {
         <div className="container mx-auto px-6 relative z-10 flex flex-col justify-center h-full py-32">
           <motion.div 
             initial={{ opacity: 0, y: -50 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
+            animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.3 }}
             className="max-w-3xl"
           >
             <motion.h1 
               initial={{ opacity: 0, y: -30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
               viewport={{ once: false, amount: 0.3 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#F39C12]"
@@ -45,7 +45,7 @@ const Home = () => {
             </motion.h1>
             <motion.h2 
               initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
               viewport={{ once: false, amount: 0.3 }}
               className="text-xl md:text-2xl font-light mb-8 text-amber-50"
@@ -54,7 +54,7 @@ const Home = () => {
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
               viewport={{ once: false, amount: 0.3 }}
               className="text-lg mb-8 text-gray-300 max-w-2xl"
@@ -63,17 +63,17 @@ const Home = () => {
             </motion.p>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
               viewport={{ once: false, amount: 0.3 }}
               className="flex flex-wrap gap-4"
             >
-              <a href="#emergency" className="px-8 py-3 bg-yellow-400 hover:bg-[#c0392b] rounded-md text-black font-medium transition duration-300">
+              <Link to="/contact" className="px-8 py-3  bg-yellow-400 hover:bg-[#c0392b] rounded-md text-black font-medium transition duration-300">
                 Emergency Service
-              </a>
-              <a href="#services" className="px-8 py-3 bg-[#1A3E6C] hover:bg-[#152d4e] rounded-md text-white font-medium transition duration-300">
+              </Link>
+              <Link to="/services" className="px-8 py-3  bg-black hover:bg-[#c0392b] rounded-md text-white font-medium transition duration-300">
                 Our Services
-              </a>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
@@ -81,7 +81,7 @@ const Home = () => {
         {/* Availability Notification */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1, duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
           className="absolute bottom-8 left-0 right-0 text-center text-white"
