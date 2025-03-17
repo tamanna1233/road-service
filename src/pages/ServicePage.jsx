@@ -32,7 +32,7 @@ console.log(id)
   }, [id]);
 
   return (
-    <section className="py-10 bg-neutral-900 text-yellow-300">
+    <section className="py-20 bg-neutral-900 text-yellow-300">
       <div className=" mx-auto px-4 flex flex-col md:flex-row gap-6">
         
         {/* Left: Service List */}
