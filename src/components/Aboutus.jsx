@@ -91,7 +91,7 @@ const teamStats=[
         >
           <motion.div
             initial={{ rotate: 0 }}
-            animate={{ rotate: 360 }}
+            whileInView={{ rotate: 360 }}
             transition={{ duration: 1, repeat: 0 }}
             viewport={{ once:false ,amount:0.3}}
           >

@@ -79,7 +79,7 @@ export default function Footer() {
         </div>
       </div>
       </footer>
-    <div className="bg-gray-900 text-white py-6 mt-2">
+    <div className="bg-gray-900 text-white py-6 mt-0.5">
       <div className="container mx-auto px-6 text-center">
         <p className="text-sm">&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
         <nav className="mt-4">

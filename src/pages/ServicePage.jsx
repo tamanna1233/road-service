@@ -36,7 +36,7 @@ console.log(id)
       <div className=" mx-auto px-4 flex flex-col md:flex-row gap-6">
         
         {/* Left: Service List */}
-        <div className=" p-6 rounded-lg shadow-lg w-full md:w-1/3 max-h-[500px] overflow-y-auto">
+        <div className=" p-6 w-full md:w-1/3 max-h-[700px] overflow-y-auto">
           <h2 className="text-3xl font-bold text-yellow-400 mb-6 text-center">Our Services</h2>
           <ul className="space-y-4">
             {services.map((service) => (
@@ -54,7 +54,7 @@ console.log(id)
         </div>
 
         {/* Right: Service Details */}
-        <div className=" p-8 rounded-lg shadow-lg w-full md:w-2/3">
+        <div className=" p-8 = w-full md:w-2/3">
           <h2 className="text-3xl md:text-4xl font-bold text-yellow-400">{selectedService.title}</h2>
           <p className="mt-4 text-gray-400">{selectedService.description}</p>
         </div>
