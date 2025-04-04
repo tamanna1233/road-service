@@ -87,7 +87,6 @@ const Home = () => {
           src={truckimage}
           alt="Moving Truck"
           className="w-[80%] h-auto "
-          loading="lazy"
         />
       </motion.div>
 
