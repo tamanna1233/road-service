@@ -11,6 +11,12 @@ export default defineConfig({
     
   ],
 
+test:{
+  environment: 'jsdom',
+  globals: true,
+  setupFiles: './src/setupTests.js', 
+},
+
   build:{
     minify: 'esbuild', // Use esbuild for faster minification
     target: 'esnext', 

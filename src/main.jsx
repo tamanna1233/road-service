@@ -16,7 +16,6 @@ const ServicesSection = lazy(() => import('./components/Services.jsx'))
 const AboutUs = lazy(() => import('./components/Aboutus.jsx'))
 const Testimonials = lazy(() => import('./components/Testamonials.jsx'))
 const Contact = lazy(() => import('./components/Contact.jsx'))
-const FAQ = lazy(() => import('./components/FAQ.jsx'))
 const router=createBrowserRouter(
   createRoutesFromElements(
   
@@ -29,7 +28,6 @@ const router=createBrowserRouter(
     <Route path='/why-us' element={<WhyChooseUs/>}/>
     <Route path='/testimonial' element={<Testimonials/>}/>
     <Route path='/contact' element={<Contact/>}/>
-    <Route path='/faq' element={<FAQ/>}/>
     </Route>
   
   )

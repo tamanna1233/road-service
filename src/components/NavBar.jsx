@@ -27,7 +27,6 @@ export default function Navbar() {
     },
     { name: "Testimonial", path: "/testimonial" },
     { name: "Contact", path: "/contact" },
-    { name: "FAQ", path: "/faq" },
   ];
 
   // Close dropdown when clicking outside (for desktop only)
@@ -46,7 +45,7 @@ export default function Navbar() {
     <div className="fixed w-full z-50 bg-gradient-to-r from-neutral-900 to-neutral-800">
       <nav className="flex justify-between items-center h-16 px-6 text-white">
         <Link to="/" className="text-xl font-bold text-[#F39C12]">
-          TruckRepair Logistics
+         TWGC
         </Link>
 
         {/* Desktop Navigation */}
