@@ -20,9 +20,10 @@ export default function Navbar() {
     // },
     {
       name: "About Us",
-      path: "/aboutus"
+      path: "/testimonial"
     },
-    { name: "Testimonial",  },
+    { name: "Testimonial",      path: "/testimonial"
+    },
     { name: "Contact", path: "/contact" },
     { name: "Blogs", path: "/blogs" },
 
