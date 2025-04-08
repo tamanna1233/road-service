@@ -27,6 +27,8 @@ export default function Navbar() {
     },
     { name: "Testimonial", path: "/testimonial" },
     { name: "Contact", path: "/contact" },
+    { name: "blogs", path: "/blogs" },
+
   ];
 
   // Close dropdown when clicking outside (for desktop only)

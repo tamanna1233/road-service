@@ -12,6 +12,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@portabletext/react": "^3.2.1",
+    "@sanity/client": "^6.28.4",
     "@tailwindcss/vite": "^4.0.12",
     "framer-motion": "^12.4.10",
     "knip": "^5.46.0",

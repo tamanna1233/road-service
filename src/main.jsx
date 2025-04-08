@@ -9,6 +9,8 @@ import LoadingAnimation from './components/Loadinganimation.jsx'
 import Mission from './pages/Ourmission.jsx'
 import WhyChooseUs from './pages/Whyus.jsx'
 import ServicesPage from './pages/ServicePage.jsx'
+import BlogList from './components/Blog.jsx'
+import BlogDetails from './components/BlogDetails.jsx'
 
 
 const Homepage = lazy(() => import('./pages/Homepage.jsx'))
@@ -28,6 +30,9 @@ const router=createBrowserRouter(
     <Route path='/why-us' element={<WhyChooseUs/>}/>
     <Route path='/testimonial' element={<Testimonials/>}/>
     <Route path='/contact' element={<Contact/>}/>
+    <Route path='/blogs' element={<BlogList/>}/>
+    <Route path="/blog/:slug" element={<BlogDetails />} />
+
     </Route>
   
   )
