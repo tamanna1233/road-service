@@ -7,7 +7,7 @@ const Homepage = () => {
     <div>
 <Home/>
 <ServicesSection/>
-<AboutUs/>      
+{/* <AboutUs/>       */}
     </div>
   )
 }

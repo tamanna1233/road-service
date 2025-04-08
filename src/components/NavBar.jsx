@@ -10,24 +10,21 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Home", path: "/" },
-    {
-      name: "Services",
-      dropdown: [
-        { name: "Wheel Laser Alignment", path: "/services/Wheel Laser Alignment" },
-        { name: "New Tires Installation", path: "/services/New Tires Installation" },
-        { name: "Mobile Truck Repair", path: "/services/Mobile Truck Repair" },
-      ],
-    },
+    // {
+    //   name: "Services",
+    //   dropdown: [
+    //     { name: "Wheel Laser Alignment", path: "/services/Wheel Laser Alignment" },
+    //     { name: "New Tires Installation", path: "/services/New Tires Installation" },
+    //     { name: "Mobile Truck Repair", path: "/services/Mobile Truck Repair" },
+    //   ],
+    // },
     {
       name: "About Us",
-      dropdown: [
-        { name: "Our mission", path: "/our_mission" },
-        { name: "Why Choose Us", path: "/why-us" },
-      ],
+      path: "/aboutus"
     },
-    { name: "Testimonial", path: "/testimonial" },
+    { name: "Testimonial",  },
     { name: "Contact", path: "/contact" },
-    { name: "blogs", path: "/blogs" },
+    { name: "Blogs", path: "/blogs" },
 
   ];
 
