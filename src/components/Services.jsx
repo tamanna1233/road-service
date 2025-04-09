@@ -1,5 +1,5 @@
 import safety from "../assets/safety.webp";
-import Dispatch from "../assets/Dispatchwebp.webp";
+import Dispatch from "../assets/dispatch.webp";
 import  Freight from "../assets/freight.webp";
 import warehouse from "../assets/warehouse.webp";
 import container from "../assets/containerwebp.webp";
