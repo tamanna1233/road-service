@@ -1,60 +1,13 @@
 @import "tailwindcss";
 
-@theme{
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url('./assets/font/Oswald-Regular.ttf') format('truetype');
+}
 
-    /* --*: initial; */
-  --animate-wiggle: wiggle 1s ease-in-out infinite;
-    @keyframes wiggle {
-      0%,
-      100% {
-        transform: rotate(-3deg);
-      }
-      50% {
-        transform: rotate(3deg);
-      }
-    }
-    --animate-truck : truck-move 10s ease-in-out  infinite;
-
-    @keyframes truck-move {
-      0% {
-        transform: translateX(-20vw) scale(0.5);
-        opacity: 0.1;
-        filter: blur(2px);
-      }
-      20% {
-        transform: translateX(10vw) rotate(-5deg);
-        opacity: 0.5;
-        filter: blur(0px);
-      }
-      40% {
-        transform: translateX(30vw) rotate(5deg);
-        opacity: 1;
-      }
-      60% {
-        transform: translateX(50vw) rotate(-3deg) ;
-        opacity: 0.8;
-      }
-      80% {
-        transform: translateX(70vw) rotate(3deg) ;
-        opacity: 0.5;
-      }
-      100% {
-        transform: translateX(120vw);
-        opacity: 0;
-        /* filter: blur(2px); */
-      }
-    }
-    
-
-    --animate-fade-in-scale: fade-in-scale 0.3s ease-out;
-    @keyframes fade-in-scale {
-      0% {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
+@theme {
+  --font-oswald: "Oswald", "sans-serif";
 }

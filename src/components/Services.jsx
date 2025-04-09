@@ -59,14 +59,14 @@ const ServicesSection = () => {
 
 
         
-        <div className="text-center mt-8">
+        {/* <div className="text-center mt-8">
           <Link
             to="/services"
             className="text-[#facc15] text-lg font-semibold hover:underline"
           >
             View All Services →
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );

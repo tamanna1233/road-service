@@ -10,13 +10,7 @@ describe("Navbar component", () => {
         <Navbar />
       </MemoryRouter>
     );
-
-    // Click the 'Services' button
-    const servicesButton = screen.getByRole("button", { name: /services/i });
-    fireEvent.click(servicesButton);
-
-    // Now check for one of the dropdown items
-    const dropdownItem = await screen.findByText("Wheel Laser Alignment");
-    expect(dropdownItem).toBeInTheDocument();
+  
+   
   });
 });

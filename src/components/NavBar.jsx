@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { AiOutlineDown } from "react-icons/ai";
-
+import logo from "../assets/logo3.png";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [dropdown, setDropdown] = useState(null);
@@ -20,12 +20,12 @@ export default function Navbar() {
     // },
     {
       name: "About Us",
-      path: "/testimonial"
+      path: "/about-us"
     },
     { name: "Testimonial",      path: "/testimonial"
     },
-    { name: "Contact", path: "/contact" },
     { name: "Blogs", path: "/blogs" },
+    { name: "Contact", path: "/contact" },
 
   ];
 
@@ -42,10 +42,10 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="fixed w-full z-50 bg-gradient-to-r from-neutral-900 to-neutral-800">
+    <div className="fixed w-full z-50 bg-black">
       <nav className="flex justify-between items-center h-16 px-6 text-white">
-        <Link to="/" className="text-xl font-bold text-[#F39C12]">
-         TWGC
+        <Link to="/" className="">
+         <img src={logo} className="h-26"/>
         </Link>
 
         {/* Desktop Navigation */}

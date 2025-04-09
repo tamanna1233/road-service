@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="font-serif">
+    <div className="font-oswald ">
      <Navbar/>
       <Outlet />
       <Footer/>

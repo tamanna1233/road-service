@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { PiPhone, PiPhoneCall } from 'react-icons/pi';
 const Contact = () => {
   return (
-    <section name="contact" className="text-black py-20 px-6 md:px-12 lg:px-24">
+    <section name="contact" className="text-yellow-400 bg-black py-20 px-6 md:px-12 lg:px-24">
     
       {/* Basic SEO */}
       <title>24/7 Truck Logistics & Fleet Support | Reliable Truck Repair Services</title>
@@ -16,7 +16,7 @@ const Contact = () => {
         className="max-w-4xl mx-auto text-center"
       >
         <h2 className="text-4xl font-bold mb-6">Contact Us</h2>
-        <h3 className="text-black mb-8">
+        <h3 className="text-yellow-400 mb-8">
           Need assistance with your fleet or have questions about our services? Reach out to our team for prompt and professional support.
         </h3>
       </motion.div>

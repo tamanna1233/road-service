@@ -21,10 +21,10 @@ const router=createBrowserRouter(
   
     <Route path='/' element={<Suspense fallback={<LoadingAnimation/>}><App/></Suspense>}>
     <Route index element={<Homepage/>}/>
-    {/* <Route path='/services' element={<ServicesPage/>}/>
-    <Route path='/services/:id' element={<ServicesPage/>}/> */}
+   <Route path='/services' element={<ServicesSection/>}/>
+    {/*  <Route path='/services/:id' element={<ServicesPage/>}/> */}
 
-    <Route path='/aboutus' element={<AboutUs/>}/>
+    <Route path='/about-us' element={<AboutUs/>}/>
     <Route path='/testimonial' element={<Testimonials/>}/>
     <Route path='/contact' element={<Contact/>}/>
     <Route path='/blogs' element={<BlogList/>}/>

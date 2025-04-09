@@ -74,7 +74,7 @@ const teamStats=[
      <meta name="keywords" content="truck repair services, fleet maintenance, roadside assistance, heavy-duty truck repair, emergency truck service, commercial truck maintenance, certified truck technicians, ASE-certified technicians, 24/7 truck repair, mobile truck repair, diesel engine diagnostics, transmission repair, towing and recovery services, preventive truck maintenance, best logistics services, truck service ratings, fleet manager reviews, nationwide truck repair network, truck and trailer repair experts, reliable truck servicing" />     <meta name="author" content="Truck and trailer repair" />
   
     
-    <section name="about-us" className="grid grid-cols-1 lg:grid-cols-2 place-content-center gap-x-24 px-8 bg-white py-20 ">
+    <section name="about-us" className="grid grid-cols-1 lg:grid-cols-2 place-content-center gap-x-24 px-8 bg-black text-yellow-400 py-20 ">
       <motion.div 
         className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8"
         initial={{ opacity: 0, y: 30 }}
@@ -97,8 +97,8 @@ const teamStats=[
           >
             <HiMiniCubeTransparent size={60} color="gold" />
           </motion.div>
-          <h3 className="text-2xl font-bold text-gray-300 ">Our Mission</h3>
-          <p className="text-gray-400 font-bold mt-2">
+          <h3 className="text-2xl font-bold text-yellow-400  ">Our Mission</h3>
+          <p className="font-bold mt-2 text-yellow-400 ">
           To provide industry-leading truck repair and roadside assistance services that keep commercial fleets moving efficiently and safely. We prioritize rapid response, technical expertise, and customer satisfaction in everything we do.
           </p>
          <motion.div className="text-yellow-400 pt-3.5 font-bold flex items-center gap-x-3" 
@@ -118,7 +118,7 @@ const teamStats=[
         viewport={{ once: false ,amount:0.3}}
       >
         <motion.h2 
-          className="text-4xl font-bold text-gray-900 "
+          className="text-4xl font-bold text-yellow-400 "
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -128,7 +128,7 @@ const teamStats=[
         </motion.h2>
 
         <motion.p 
-          className="text-gray-700 text-lg  text-start"
+          className="text-yellow-400 text-lg  text-start"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -136,7 +136,7 @@ const teamStats=[
         >
           With over 20 years of experience in commercial truck repair and roadside assistance, we've built a reputation for reliability, technical excellence, and customer-focused service. Our nationwide network ensures we're always available when and where you need us.
 </motion.p>
-<motion.p className="text-gray-700 text-lg   text-start">
+<motion.p className="text-yellow-400 text-lg   text-start">
 Our team of ASE-certified technicians specializes in all aspects of commercial vehicle repair and maintenance, from engines and transmissions to electrical systems and DOT compliance inspections.
         </motion.p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4">
@@ -148,7 +148,7 @@ Our team of ASE-certified technicians specializes in all aspects of commercial v
 
       <motion.div className=" w-full mt-8 col-span-full">
   <motion.h1 
-    className="text-4xl font-bold text-gray-900 text-center"
+    className="text-4xl font-bold text-yellow-400  text-center"
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6 }}
@@ -167,7 +167,7 @@ Our team of ASE-certified technicians specializes in all aspects of commercial v
 
 <motion.div className=" w-full mt-8 col-span-full ">
   <motion.h1 
-    className="text-4xl font-bold text-gray-900 text-center"
+    className="text-4xl font-bold text-yellow-400  text-center"
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6 }}
@@ -187,7 +187,7 @@ Our team of ASE-certified technicians specializes in all aspects of commercial v
 
      <motion.div className=" col-span-full flex justify-center items-center mt-8">
       <Link to={"/contact"}>
-        <button className="bg-black  rounded-md text-white p-4"> Contact our Team </button>
+        <button className="bg-[#262626]  rounded-md text-white p-4"> Contact our Team </button>
       </Link>
       </motion.div>  
 
