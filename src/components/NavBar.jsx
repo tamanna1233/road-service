@@ -43,9 +43,9 @@ export default function Navbar() {
 
   return (
     <div className="fixed w-full z-50 bg-black">
-      <nav className="flex justify-between items-center h-16 px-6 text-white">
+      <nav className="flex justify-around items-center h-16 px-6 text-white">
         <Link to="/" className="">
-         <img src={logo} className="h-26"/>
+         <img src={logo} className="h-16 md:h-26"/>
         </Link>
 
         {/* Desktop Navigation */}
