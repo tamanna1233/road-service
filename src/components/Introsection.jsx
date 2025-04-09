@@ -1,4 +1,7 @@
 import React from 'react';
+import istimg from "../assets/home.webp"
+import sectimg from "../assets/second.webp"
+import thiedimg from "../assets/third.webp"
 
 const IntroductionSection = () => {
   return (
@@ -97,7 +100,7 @@ const IntroductionSection = () => {
           <div className="lg:w-1/2 grid grid-cols-2 gap-4">
             <div className="col-span-2">
               <img
-                src="https://images.unsplash.com/photo-1507679799987-c73779587ccf"
+                src={istimg}
                 alt="Professional business meeting"
                 onError={(e) => (e.target.src = 'https://placehold.co/800x400/000000/FFD700?text=Walia+Logistics')}
                 className="w-full h-52 object-cover rounded-lg shadow-md"
@@ -105,7 +108,7 @@ const IntroductionSection = () => {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1484981138541-3d074aa97716"
+                src={sectimg}
                 alt="Logistics professional at work"
                 onError={(e) => (e.target.src = 'https://placehold.co/400x300/000000/FFD700?text=Logistics')}
                 className="w-full h-48 object-cover rounded-lg shadow-md"
@@ -113,7 +116,7 @@ const IntroductionSection = () => {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1425421669292-0c3da3b8f529"
+                src={thiedimg}
                 alt="Professional executive"
                 onError={(e) => (e.target.src = 'https://placehold.co/400x300/000000/FFD700?text=Executive')}
                 className="w-full h-48 object-cover rounded-lg shadow-md"

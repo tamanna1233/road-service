@@ -15,11 +15,11 @@ export default function Footer() {
   ]
   return (
     <>
-    <footer className="  px-4 py-12 bg-black text-white">
+    <footer className="  px-4 py-12 bg-black text-white border-t-2">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mb-8">
         {/* Company Info */}
         <div>
-         <img src={logo} alt="" className="h-24 mx-auto" />
+         <img src={logo} alt="brand logo" className="h-24 mx-auto" />
 
           <p className="px-2 md:px-8 text-xl py-2">
           Your trusted partner in complete logistics, transportation, and fleet management services across North America since 2016.          </p>
@@ -87,7 +87,7 @@ export default function Footer() {
         </div>
       </div>
       </footer>
-    <div className="bg-gray-900 text-white py-6 ">
+    <div className="bg-black text-white py-6 ">
       <div className="container mx-auto px-6 text-center">
         <p className="text-sm">&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
         

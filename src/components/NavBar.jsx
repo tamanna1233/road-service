@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { AiOutlineDown } from "react-icons/ai";
 import logo from "../assets/logo3.png";
+
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [dropdown, setDropdown] = useState(null);
@@ -10,19 +11,12 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Home", path: "/" },
-    // {
-    //   name: "Services",
-    //   dropdown: [
-    //     { name: "Wheel Laser Alignment", path: "/services/Wheel Laser Alignment" },
-    //     { name: "New Tires Installation", path: "/services/New Tires Installation" },
-    //     { name: "Mobile Truck Repair", path: "/services/Mobile Truck Repair" },
-    //   ],
-    // },
+  
     {
       name: "About Us",
       path: "/about-us"
     },
-    { name: "Testimonial",      path: "/testimonial"
+    { name: "Testimonial",path: "/testimonial"
     },
     { name: "Blogs", path: "/blogs" },
     { name: "Contact", path: "/contact" },
@@ -43,10 +37,10 @@ export default function Navbar() {
 
   return (
     <div className="fixed w-full z-50 bg-black">
-      <nav className="flex justify-around items-center h-16 px-6 text-white">
-        <Link to="/" className="">
-         <img src={logo} className="h-16 md:h-26"/>
-        </Link>
+      <nav className="flex justify-between md:justify-around items-center h-16 px-6 text-white">
+        
+         <img src={logo} className="h-16 md:h-26" alt=" brand logo"/>
+    
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex md:items-center space-x-6">

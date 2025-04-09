@@ -1,6 +1,9 @@
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { GiCarWheel, GiTyre, GiTowTruck } from "react-icons/gi";
+import safety from "../assets/safety.webp";
+import Dispatch from "../assets/Dispatchwebp.webp";
+import  Freight from "../assets/freight.webp";
+import warehouse from "../assets/warehouse.webp";
+import container from "../assets/containerwebp.webp";
+import intermodal from "../assets/intermodal.webp";
 
 const services = [
   {
@@ -17,7 +20,7 @@ const services = [
       "Fully FMCSA & DOT compliant",
       "Emergency and scheduled services available"
     ],
-    image: "https://images.unsplash.com/photo-1662309376159-b95fb193d96b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: safety,
     alt: "Fleet maintenance service"
   },
   {
@@ -32,7 +35,7 @@ const services = [
       "Multilingual support and professional dispatchers",
       "Maximize profits and reduce deadhead miles"
     ],
-    image: "https://images.pexels.com/photos/6170398/pexels-photo-6170398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: Dispatch,
     alt: "Dispatch services"
   },
   {
@@ -47,7 +50,7 @@ const services = [
       "Damage claims management and resolution",
       "Customized freight solutions for all industries"
     ],
-    image: "https://images.pexels.com/photos/5025630/pexels-photo-5025630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: Freight,
     alt: "Freight brokerage"
   },
   {
@@ -62,7 +65,7 @@ const services = [
       "Bonded and insured storage facilities",
       "Conveniently located near major ports and highways"
     ],
-    image: "https://images.pexels.com/photos/4481528/pexels-photo-4481528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image:warehouse ,
     alt: "Warehouse storage"
   },
   {
@@ -77,7 +80,7 @@ const services = [
       "Bonded drayage available",
       "We simplify the complex port logistics process"
     ],
-    image: "https://images.pexels.com/photos/6169056/pexels-photo-6169056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: container,
     alt: "Container logistics"
   },
   {
@@ -92,7 +95,7 @@ const services = [
       "Complete tracking from origin to destination",
       "A smarter, greener way to ship freight long-distance"
     ],
-    image: "https://images.pexels.com/photos/11679518/pexels-photo-11679518.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: intermodal,
     alt: "Intermodal transport"
   }
 ];

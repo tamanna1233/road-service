@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaArrowDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-
+import bg from "../assets/home.webp"
 const Home = () => {
   return (
     <>
@@ -27,7 +27,7 @@ const Home = () => {
         <div
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{
-            backgroundImage: `url(https://images.unsplash.com/photo-1507679799987-c73779587ccf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8bWFpbiUyMHZpZXclMjBmZWF0dXJlZCUyMGltYWdlJTIwcHJvZmVzc2lvbmFsJTIwaGlnaCUyMHF1YWxpdHklMjBmZWF0dXJlZHxlbnwwfDB8fHwxNzQzMTU5NDUyfDA&ixlib=rb-4.0.3&q=80&w=1080)`,
+            backgroundImage: `url(${bg})`,
           }}
         ></div>
 
