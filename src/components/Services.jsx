@@ -106,7 +106,7 @@ const ServiceCard = ({ title, image, description, alt, isReversed, icon, points 
     className={`flex flex-col-reverse md:flex-row ${
       isReversed ? 'md:flex-row-reverse' : ''
     } items-center md:items-stretch gap-4 bg-[#1e1e1e] 
-    rounded-xl overflow-hidden max-w-4xl w-full min-h-96`}
+    rounded-xl overflow-hidden max-w-5xl w-full min-h-96`}
   >
     {/* Text Section */}
     <div className="flex-2 flex flex-col items-center justify-start text-center p-6 text-[#facc15]">
@@ -148,7 +148,7 @@ const ServicesSection = () => {
   {services.map((service, index) => (
     <div
       key={index}
-      className={`w-full flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
+      className={`w-full flex justify-center items-center`}
     >
       <ServiceCard {...service} isReversed={index % 2 !== 0} />
     </div>

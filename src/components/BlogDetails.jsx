@@ -1,7 +1,8 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { client } from '../sanity';
+import { client, urlFor } from '../sanity';
 import { PortableText } from '@portabletext/react';
+import LoadingAnimation from './Loadinganimation';
 
 const BlogDetails = () => {
   const { slug } = useParams();
@@ -12,60 +13,72 @@ const BlogDetails = () => {
       title,
       body,
       publishedAt,
-      author->{name},
-      mainImage {
-        asset->{url}
-      }
+      author->{name, image},
+      mainImage { asset->{url} }
     }`;
 
-    client.fetch(query, { slug }).then(data => setBlog(data));
+    client.fetch(query, { slug }).then(setBlog);
   }, [slug]);
 
-  if (!blog) return <div className="p-20 text-yellow-400">Loading...</div>;
+  if (!blog) return <LoadingAnimation/>
 
   return (
     <>
-      {/* Static SEO Meta Tags */}
+      {/* SEO Meta Tags */}
       <>
-        <title>Logistics Blog - Insights, Supply Chain, Shipping Tips</title>
+        <title>{blog.title} | Logistics Blog</title>
         <meta
           name="description"
-          content="Explore in-depth logistics articles, supply chain strategies, and tips on shipping and warehousing in our expert blog."
+          content="Explore this in-depth logistics article, covering insights, strategies, and tips from industry experts."
         />
         <meta
           name="keywords"
-          content="logistics, supply chain, freight, shipping, warehousing, delivery, transportation, cargo, warehouse"
+          content="logistics, supply chain, freight, shipping, warehousing, delivery, transportation"
         />
-        <meta property="og:title" content="Logistics Blog - Expert Articles & News" />
+        <meta property="og:title" content={blog.title} />
         <meta
           property="og:description"
-          content="Stay updated with our expert-written blogs on logistics, transport, and supply chain management."
+          content="Read this expert blog on logistics, shipping, and supply chain."
         />
         <meta
           property="og:image"
-          content="https://example.com/default-thumbnail.jpg"
+          content={blog.mainImage?.asset?.url || "https://example.com/default-thumbnail.jpg"}
         />
         <meta property="og:type" content="article" />
       </>
 
-      {/* Blog Content */}
-      <div className="p-20 space-y-6 bg-black text-yellow-400 min-h-screen">
-        <h1 className="text-3xl font-semibold">{blog.title}</h1>
-        {blog.publishedAt && (
-          <p className="text-yellow-500 text-sm">
-            By {blog.author?.name || 'Unknown'} ·{' '}
-            {new Date(blog.publishedAt).toLocaleDateString()}
-          </p>
-        )}
-        {blog.mainImage && (
-          <img
-            src={blog.mainImage.asset.url}
-            alt={blog.title}
-            className="w-full max-h-[500px] object-scale-down rounded-lg"
-          />
-        )}
-        <PortableText value={blog.body} />
-      </div>
+      {/* Blog Details */}
+      <section className="bg-white text-black min-h-screen py-16 px-4 md:px-8 lg:px-20 font-barlow">
+        <div className="max-w-5xl mx-auto space-y-8">
+          <h1 className="text-3xl md:text-4xl font-bold">{blog.title}</h1>
+
+          <div className="flex items-center gap-4 text-sm text-black">
+            {blog.author?.image && (
+              <img
+                src={urlFor(blog.author.image).width(50).url()}
+                alt={blog.author.name}
+                className="w-10 h-10 rounded-full object-cover"
+              />
+            )}
+            <p>
+              By <span className="font-semibold">{blog.author?.name || 'Unknown'}</span> •{' '}
+              {new Date(blog.publishedAt).toLocaleDateString()}
+            </p>
+          </div>
+
+          {blog.mainImage && (
+            <img
+              src={blog.mainImage.asset.url}
+              alt={blog.title}
+              className="w-full max-h-[500px] object-cover rounded-lg shadow-md"
+            />
+          )}
+
+          <article className="prose prose-lg prose-invert max-w-none font-roboto">
+            <PortableText value={blog.body} />
+          </article>
+        </div>
+      </section>
     </>
   );
 };

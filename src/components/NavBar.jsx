@@ -37,7 +37,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed w-full z-50 bg-black">
-      <nav className="flex justify-between md:justify-around items-center h-16 px-6 text-white">
+      <nav className="flex justify-between  items-center h-16 px-6 text-white">
         
          <img src={logo} className="h-16 md:h-26" alt=" brand logo"/>
     
