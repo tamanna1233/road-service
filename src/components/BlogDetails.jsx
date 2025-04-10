@@ -1,18 +1,20 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { client, urlFor } from '../sanity';
 import { PortableText } from '@portabletext/react';
+import { AiOutlineArrowLeft } from 'react-icons/ai';
 import LoadingAnimation from './Loadinganimation';
 
 const BlogDetails = () => {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const [blog, setBlog] = useState(null);
 
   useEffect(() => {
     const query = `*[_type == "post" && slug.current == $slug][0]{
       title,
       body,
-      publishedAt,
+      _createdAt,
       author->{name, image},
       mainImage { asset->{url} }
     }`;
@@ -20,13 +22,13 @@ const BlogDetails = () => {
     client.fetch(query, { slug }).then(setBlog);
   }, [slug]);
 
-  if (!blog) return <LoadingAnimation/>
+  if (!blog) return <LoadingAnimation />;
 
   return (
     <>
       {/* SEO Meta Tags */}
       <>
-        <title>{blog.title} | Logistics Blog</title>
+        <title>| Logistics Blog</title>
         <meta
           name="description"
           content="Explore this in-depth logistics article, covering insights, strategies, and tips from industry experts."
@@ -48,10 +50,26 @@ const BlogDetails = () => {
       </>
 
       {/* Blog Details */}
-      <section className="bg-white text-black min-h-screen py-16 px-4 md:px-8 lg:px-20 font-barlow">
+      <section className="bg-white text-black min-h-screen py-16 px-4 md:px-8 lg:px-20  ">
+     
+     <div className='relative top-12'>
+
+      <button
+    onClick={() => navigate(-1)}
+    className="flex items-center text-black hover:text-blue-800 st "
+  >
+    <AiOutlineArrowLeft className="w-5 h-5 mr-2" />
+    Back
+  </button>
+      </div> 
+
         <div className="max-w-5xl mx-auto space-y-8">
+    
+
+          {/* Title */}
           <h1 className="text-3xl md:text-4xl font-bold">{blog.title}</h1>
 
+          {/* Author Info */}
           <div className="flex items-center gap-4 text-sm text-black">
             {blog.author?.image && (
               <img
@@ -62,10 +80,11 @@ const BlogDetails = () => {
             )}
             <p>
               By <span className="font-semibold">{blog.author?.name || 'Unknown'}</span> •{' '}
-              {new Date(blog.publishedAt).toLocaleDateString()}
+              {new Date(blog._createdAt).toLocaleDateString()}
             </p>
           </div>
 
+          {/* Main Image */}
           {blog.mainImage && (
             <img
               src={blog.mainImage.asset.url}
@@ -74,6 +93,7 @@ const BlogDetails = () => {
             />
           )}
 
+          {/* Blog Body */}
           <article className="prose prose-lg prose-invert max-w-none font-roboto">
             <PortableText value={blog.body} />
           </article>
