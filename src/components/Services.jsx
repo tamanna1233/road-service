@@ -143,6 +143,8 @@ const ServicesSection = () => {
         >
         Services
         </h2>
+        <div className="h-1 w-20 bg-yellow-400 mx-auto" />
+
         <h3 className="text-white text-center p-4">Comprehensive logistics solutions tailored to meet your business needs with unmatched reliability and efficiency.</h3>
         <div className="flex flex-col gap-8">
   {services.map((service, index) => (

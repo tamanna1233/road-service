@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { client } from "../sanity";
 import { urlFor } from "../sanity";
+import LoadingAnimation from "./Loadinganimation";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
@@ -70,6 +71,8 @@ const Blog = () => {
 
     setFilteredBlogs(updated);
   }, [category, searchTerm, blogs]);
+
+  if(!filteredBlogs) return <LoadingAnimation/>
   return (
     <section id="blog" className="py-20 bg-white min-h-screen">
       <div className="container mx-auto px-4">

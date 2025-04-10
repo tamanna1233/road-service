@@ -40,7 +40,7 @@ const cardData = [
 ];
 
 const LeadershipCard = ({ title, description, icon }) => (
-  <div className="bg-black p-8 rounded-lg text-center">
+  <div className="bg-black p-2 md:p-8 rounded-lg text-center mx-4">
     <div className="w-16 h-16 mx-auto bg-yellow-400 rounded-full flex items-center justify-center mb-6">
       <svg
         className="w-8 h-8 text-black"
@@ -58,13 +58,13 @@ const LeadershipCard = ({ title, description, icon }) => (
 
 const LeadershipValues = () => {
   return (
-    <div className="container m-20">
+    <div className="container mx-auto mt-4">
       <div className="text-center mb-12">
         <h3 className="text-2xl font-bold mb-4 text-black font-barlow">Our Leadership Values</h3>
         <div className="h-1 w-20 bg-yellow-400 mx-auto" />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="flex  flex-col lg:flex-row justify-center items-center gap-4">
         {cardData.map((card, index) => (
           <LeadershipCard
             key={index}

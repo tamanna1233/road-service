@@ -22,7 +22,7 @@ const Whyus = () => {
     <div>
 
     </div>
-    <div className='flex items-center justify-center gap-4 py-8'>  { fratures.map((item,index)=>(
+    <div className='flex flex-col md:flex-row items-center justify-center gap-4 py-8'>  { fratures.map((item,index)=>(
 
     <div key={index} className='bg-black text-white p-4 rounded-lg flex flex-col items-center justify-center'>
  {React.createElement(item.icons, {

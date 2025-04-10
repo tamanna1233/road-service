@@ -47,10 +47,10 @@ const About = () => {
         </div>
 
         {/* Founders Section */}
-        <div className="bg-neutral-100 py-16 px-6 md:px-10 rounded-xl mb-20">
+        <div className="bg-gray-200 py-16 px-2 md:px-10 rounded-xl mb-20 ">
           <h3 className="text-2xl font-bold mb-10 text-center text-black font-barlow">Leadership Team</h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 ">
             {/* Founder 1 */}
             <div className="bg-white p-6 rounded-lg shadow-md flex flex-col md:flex-row gap-6 items-center md:items-start">
               <div className="w-32 h-32 bg-black rounded-full flex items-center justify-center flex-shrink-0">
