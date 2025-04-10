@@ -1,201 +1,104 @@
-import { motion } from "framer-motion";
-import { HiMiniCubeTransparent } from "react-icons/hi2";
-import { LiaCertificateSolid } from "react-icons/lia";
-import { IoMdTime } from "react-icons/io";
-import { CiLocationOn } from "react-icons/ci";
-import { FaBolt, FaUser } from "react-icons/fa6";
-import { Link } from "react-router-dom";
-const AboutUs = () => {
-  const services = [
-    { id: 1, title: "Certified Excellence", icon: <LiaCertificateSolid /> , description: "All our technicians are ASE-certified with regular training on the latest vehicle technologies" },
-    { id: 2, title: "24/7 Availability", icon: <IoMdTime />, description: "Our emergency services operate around the clock, ensuring help is always available when you need it" },
-    { id: 3, title: "Nationwide Coverage", icon: <CiLocationOn />, description: "Strategic locations across the country to provide quick response times in major transport corridors" },
-    { id: 4, title: "Advanced Technology", icon: <FaBolt />, description: "State-of-the-art diagnostic equipment and repair tools for all truck makes and models" },
-
-  ];
-  const AboutusCard=({ title, icon, description })=>{
-    return(
-      <motion.div
-      className="bg-[#262626] text-white p-6 rounded-xl shadow-lg flex flex-col items-center text-center"
-      transition={{ duration: 0.4, ease: "easeInOut" }} // Faster hover effect
-      initial={{ opacity: 0, y: 50, scale: 0.95 }} // Starts slightly lower & smaller
-      animate={{ opacity: 1, y: 0, scale: 1 }} // Smooth reveal
-      viewport={{ once: false, amount: 0.3 }} // Repeats when scrolled into view
-    >
-      <motion.div
-        className="text-4xl text-yellow-400 mb-4 grid  place-items-center gap-x-2 "
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }} // Smooth scaling
-      >
-        <div className="bg-black rounded-full text-2xl w-20 h-20 flex items-center justify-center  p-4">
-        {icon}
-        </div>
-        <motion.h1
-        className="text-xl font-bold mb-2 "
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }} // Delayed text appearance
-      >
-        {title}
-      </motion.h1>
-      </motion.div>
-      
-      <motion.h2
-        className="text-white"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }} // Delayed paragraph appearance
-      >
-        {description}
-      </motion.h2>
-    </motion.div>
-    )
-  }
-  const stats=[
-    { id: 1, title: "Years of Experience", icon: "20+" , description: "Two decades of specialized experience in commercial truck repairs and maintenance" },
-    { id: 2, title: "2Repairs Completed", icon: "50K+", description: "Over 50,000 successful repairs and roadside assistance services provided" },
-    { id: 3, title: "Customer Satisfaction", icon: "99%", description: "Industry-leading satisfaction rate based on post-service customer surveys" },
-   
-  ]
-const teamStats=[
-  { id: 1, title: "Chief Executive Officer", icon: <FaUser/> , description: "30+ years in commercial trucking logistics and management" },
-  { id: 2, title: "Chief Operations Officer", icon: <FaUser/>, description: "Expert in optimizing fleet management and service logistics" },
-  { id: 3, title: "Technical Director", icon: <FaUser/>, description: "Master technician with specializations in diesel systems and fleet maintenance" },
- 
-]
-
+import React from 'react';
+import bg from "../assets/home.webp"
+import { FaLinkedin } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
+const About = () => {
   return (
-    <>
-    {/* Helmet is used to define the document head metadata */}
-
-     <title>Logistics Company - Reliable & Fast Services</title>
-     <meta name="description" content="We provide the best logistics services with reliability and efficiency." />
-     <meta name="keywords" content="truck repair services, fleet maintenance, roadside assistance, heavy-duty truck repair, emergency truck service, commercial truck maintenance, certified truck technicians, ASE-certified technicians, 24/7 truck repair, mobile truck repair, diesel engine diagnostics, transmission repair, towing and recovery services, preventive truck maintenance, best logistics services, truck service ratings, fleet manager reviews, nationwide truck repair network, truck and trailer repair experts, reliable truck servicing" />     <meta name="author" content="Truck and trailer repair" />
-  
-    
-    <section name="about-us" className="grid grid-cols-1 lg:grid-cols-2 place-content-center gap-x-24 px-8 bg-black text-yellow-400 py-20 ">
-      <motion.div 
-        className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: false ,amount:0.3}}
-      >
-        <motion.div 
-          className="bg-[#262626] p-6 rounded-lg shadow-lg min-w-xs max-w-lg min-h-72 flex justify-start items-start flex-col"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: false ,amount:0.3}}
-        >
-          <motion.div
-            initial={{ rotate: 0 }}
-            whileInView={{ rotate: 360 }}
-            transition={{ duration: 1, repeat: 0 }}
-            viewport={{ once:false ,amount:0.3}}
-          >
-            <HiMiniCubeTransparent size={60} color="gold" />
-          </motion.div>
-          <h3 className="text-2xl font-bold text-yellow-400  ">Our Mission</h3>
-          <p className="font-bold mt-2 text-yellow-400 ">
-          To provide industry-leading truck repair and roadside assistance services that keep commercial fleets moving efficiently and safely. We prioritize rapid response, technical expertise, and customer satisfaction in everything we do.
+    <section id="about" className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        {/* Section heading */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4 font-barlow">About</h2>
+          <div className="h-1 w-20 bg-yellow-400 mx-auto"></div>
+          <p className="mt-4 text-gray-700 max-w-3xl mx-auto font-roboto">
+            Learn about our journey, our leadership, and what makes Walia Group your ideal logistics partner.
           </p>
-         <motion.div className="text-yellow-400 pt-3.5 font-bold flex items-center gap-x-3" 
-         initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}> 
-          <hr className="w-10 h-1 bg-yellow-400 border-0 px-4" />
-          Keeping trucks moving
-          </motion.div>
-        </motion.div>
-      </motion.div>
-      <motion.div
-        className="max-w-5xl mx-auto text-center grid grid-cols-1"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: false ,amount:0.3}}
-      >
-        <motion.h2 
-          className="text-4xl font-bold text-yellow-400 "
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: false ,amount:0.3}}
-        >
-          About Us
-        </motion.h2>
-
-        <motion.p 
-          className="text-yellow-400 text-lg  text-start"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: false ,amount:0.3}}
-        >
-          With over 20 years of experience in commercial truck repair and roadside assistance, we've built a reputation for reliability, technical excellence, and customer-focused service. Our nationwide network ensures we're always available when and where you need us.
-</motion.p>
-<motion.p className="text-yellow-400 text-lg   text-start">
-Our team of ASE-certified technicians specializes in all aspects of commercial vehicle repair and maintenance, from engines and transmissions to electrical systems and DOT compliance inspections.
-        </motion.p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4">
-          {services.map((service) => (
-            <AboutusCard key={service.id} {...service} />
-          ))}
-        </div>
-      </motion.div>
-
-      <motion.div className=" w-full mt-8 col-span-full">
-  <motion.h1 
-    className="text-4xl font-bold text-yellow-400  text-center"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6 }}
-    viewport={{ once: false, amount: 0.3 }}
-  >
-    Why Customers Choose Us
-  </motion.h1>
-  
-  <div className="grid grid-cols-1 lg:grid-cols-3 gap-22 py-4">
-          {stats.map((stats) => (
-            <AboutusCard key={stats.id} {...stats} />
-          ))}
-        </div>
-  
-</motion.div>
-
-<motion.div className=" w-full mt-8 col-span-full ">
-  <motion.h1 
-    className="text-4xl font-bold text-yellow-400  text-center"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6 }}
-    viewport={{ once: false, amount: 0.3 }}
-  >
-    Our Leadership Team
-  </motion.h1>
-  
-  <div className="grid grid-cols-1 lg:grid-cols-3 gap-22 py-4 px-8 md:px-32">
-          {teamStats.map((stats) => (
-            <AboutusCard key={stats.id} {...stats} />
-          ))}
         </div>
 
-  
-</motion.div>
+        {/* About Us Text */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+          <div>
+            <img
+              src={bg}
+              alt="Professional business environment representing our company culture"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = 'https://placehold.co/600x400/000000/FFD700?text=About+Walia+Group';
+              }}
+              width="5066"
+              height="3377"
+              className="w-full h-full object-cover rounded-lg shadow-md"
+            />
+            <p className="text-xs text-gray-500 mt-1">Photo by Hunters Race</p>
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold mb-4 text-black font-barlow">Our Journey</h3>
+            <div className="w-16 h-1 bg-yellow-400 mb-6"></div>
+            <p className="text-gray-700 mb-4 font-roboto">
+              Founded with a vision to transform the logistics industry, Walia Group of Companies has grown from a small operation to a comprehensive logistics provider servicing clients across North America.
+            </p>
+            <p className="text-gray-700 mb-6 font-roboto">
+              With 7+ years of industry knowledge, we bring tailored logistics solutions from port to door. Our integrated approach combines dispatch services, safety management, freight brokerage, and more to offer complete supply chain solutions.
+            </p>
+            <p className="text-gray-700 font-roboto">
+              Our mission is simple: to provide reliable, efficient, and cost-effective logistics services that help our clients succeed in their business operations while maintaining the highest standards of safety and compliance.
+            </p>
+          </div>
+        </div>
 
-     <motion.div className=" col-span-full flex justify-center items-center mt-8">
-      <Link to={"/contact"}>
-        <button className="bg-[#262626]  rounded-md text-white p-4"> Contact our Team </button>
-      </Link>
-      </motion.div>  
+        {/* Founders Section */}
+        <div className="bg-neutral-100 py-16 px-6 md:px-10 rounded-xl mb-20">
+          <h3 className="text-2xl font-bold mb-10 text-center text-black font-barlow">Leadership Team</h3>
 
-      
-      
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            {/* Founder 1 */}
+            <div className="bg-white p-6 rounded-lg shadow-md flex flex-col md:flex-row gap-6 items-center md:items-start">
+              <div className="w-32 h-32 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+                <span className="text-yellow-400 text-4xl font-bold font-barlow">RW</span>
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-black mb-2 font-barlow">Rahul Walia</h4>
+                <p className="text-yellow-600 font-medium mb-3 font-barlow">Founder &amp; Safety Expert</p>
+                <p className="text-gray-700 mb-4 font-roboto">
+                  Expert in fleet operations, safety, and DOT compliance with a passion for building safer transportation systems.
+                </p>
+                <div className="flex space-x-3">
+            <a href="https://www.linkedin.com/in/rahulwalia" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl">
+          <FaLinkedin />
+         </a>
+        <a href="https://twitter.com/rahulwalia" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl">
+       <FaXTwitter />
+       </a>
+      </div>
+              </div>
+            </div>
+
+            {/* Founder 2 */}
+            <div className="bg-white p-6 rounded-lg shadow-md flex flex-col md:flex-row gap-6 items-center md:items-start">
+              <div className="w-32 h-32 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+                <span className="text-yellow-400 text-4xl font-bold font-barlow">KD</span>
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-black mb-2 font-barlow">Karan Dhatwalia</h4>
+                <p className="text-yellow-600 font-medium mb-3 font-barlow">Logistics Strategist</p>
+                <p className="text-gray-700 mb-4 font-roboto">
+                  Expert in dispatching, intermodal logistics, and warehousing with a focus on optimizing end-to-end supply chains.
+                </p>
+                <div className="flex space-x-3">
+            <a href="https://www.linkedin.com/in/rahulwalia" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl">
+          <FaLinkedin />
+         </a>
+        <a href="https://twitter.com/rahulwalia" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl">
+       <FaXTwitter />
+       </a>
+      </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    </>
   );
 };
 
-export default AboutUs;
+export default About;
