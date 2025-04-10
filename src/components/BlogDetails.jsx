@@ -27,8 +27,7 @@ const BlogDetails = () => {
   return (
     <>
       {/* SEO Meta Tags */}
-      <>
-        <title>| Logistics Blog</title>
+        <title>{blog.title}</title>
         <meta
           name="description"
           content="Explore this in-depth logistics article, covering insights, strategies, and tips from industry experts."
@@ -47,25 +46,19 @@ const BlogDetails = () => {
           content={blog.mainImage?.asset?.url || "https://example.com/default-thumbnail.jpg"}
         />
         <meta property="og:type" content="article" />
-      </>
 
       {/* Blog Details */}
-      <section className="bg-white text-black min-h-screen py-16 px-4 md:px-8 lg:px-20  ">
-     
-     <div className='relative top-12'>
+      <section className="bg-white text-black py-16 px-4 md:px-8 lg:px-20  relative">
+        {/* Back Button - Fixed & Responsive */}
+        <button
+          onClick={() => navigate(-1)}
+          className="flex items-center gap-2 text-black hover:text-blue-800 absolute left-4 top-18 md:left-8 md:top-20"
+        >
+          <AiOutlineArrowLeft className="w-5 h-5" />
+          <span className="hidden sm:inline">Back</span>
+        </button>
 
-      <button
-    onClick={() => navigate(-1)}
-    className="flex items-center text-black hover:text-blue-800 st "
-  >
-    <AiOutlineArrowLeft className="w-5 h-5 mr-2" />
-    Back
-  </button>
-      </div> 
-
-        <div className="max-w-5xl mx-auto space-y-8">
-    
-
+        <div className="max-w-5xl mx-auto space-y-8 pt-12 sm:pt-16">
           {/* Title */}
           <h1 className="text-3xl md:text-4xl font-bold">{blog.title}</h1>
 
@@ -94,7 +87,7 @@ const BlogDetails = () => {
           )}
 
           {/* Blog Body */}
-          <article className="prose prose-lg prose-invert max-w-none font-roboto">
+          <article className="prose prose-lg max-w-none font-roboto">
             <PortableText value={blog.body} />
           </article>
         </div>
