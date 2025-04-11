@@ -4,9 +4,10 @@ import  Freight from "../assets/freight.webp";
 import warehouse from "../assets/warehouse.webp";
 import container from "../assets/containerwebp.webp";
 import intermodal from "../assets/intermodal.webp";
+import { Link } from "react-router-dom";
 
 const services = [
-  {
+  { id:"safety-maintenance",
     title: "Safety & Maintenance Services",
     subtitle: "Keeping Your Fleet Compliant, Road-Ready & Risk-Free",
     description: "We provide 24/7 safety and preventive maintenance to help fleets minimize downtime, avoid fines, and maintain peak vehicle performance.",
@@ -23,7 +24,7 @@ const services = [
     image: safety,
     alt: "Fleet maintenance service"
   },
-  {
+  { id:"dispatch",
     title: "Dispatch Services",
     subtitle: "Reliable, Revenue-Driven Dispatch for Owner-Operators & Fleets",
     description: "Our dispatch team acts as your virtual office, ensuring you’re always loaded, compliant, and paid on time.",
@@ -38,7 +39,7 @@ const services = [
     image: Dispatch,
     alt: "Dispatch services"
   },
-  {
+  {id:"freight-brokerage",
     title: "Freight Brokerage Services",
     subtitle: "Connecting Shippers & Carriers Through Strategic Coordination",
     description: "As a licensed freight broker, we bridge the gap between reliable carriers and cargo-ready shippers.",
@@ -53,7 +54,7 @@ const services = [
     image: Freight,
     alt: "Freight brokerage"
   },
-  {
+  {id:"warehousing",
     title: "Warehousing Solutions",
     subtitle: "Secure, Scalable Storage for Modern Supply Chains",
     description: "Perfect for businesses needing storage, fulfillment, or inventory staging—short or long-term.",
@@ -68,7 +69,7 @@ const services = [
     image:warehouse ,
     alt: "Warehouse storage"
   },
-  {
+  {id:"container-drayage",
     title: "Container & Drayage Services",
     subtitle: "Efficient Movement of Port Cargo — On Time, Every Time",
     description: "We specialize in container drayage and port logistics, ensuring fast, reliable cargo transfers.",
@@ -83,7 +84,7 @@ const services = [
     image: container,
     alt: "Container logistics"
   },
-  {
+  {id:"intermodal",
     title: "Intermodal Logistics",
     subtitle: "Eco-Friendly & Cost-Effective Multi-Modal Freight Movement",
     description: "Our intermodal services combine truck, rail, and port transport into a seamless logistics solution.",
@@ -101,27 +102,36 @@ const services = [
 ];
 
 
-const ServiceCard = ({ title, image, description, alt, isReversed, icon, points }) => (
+const ServiceCard = ({ title, image, description, alt, isReversed, icon, points,id }) => (
   <div
     className={`flex flex-col-reverse md:flex-row ${
       isReversed ? 'md:flex-row-reverse' : ''
     } items-center md:items-stretch gap-4 bg-[#1e1e1e] 
-    rounded-xl overflow-hidden max-w-5xl w-full min-h-96`}
+    rounded-xl overflow-hidden container w-full min-h-96`}
   >
     {/* Text Section */}
     <div className="flex-2 flex flex-col items-center justify-start text-center p-6 text-[#facc15]">
       <div className="text-4xl mb-4">{icon}</div>
       <h3 className="text-xl font-bold mb-2 text-[#facc15]">{title}</h3>
       <p className="text-white mb-4">{description}</p>
-      <ul className="text-left list-disc list-inside space-y-1 text-white">
-        {points?.map((point, index) => (
+      <ul className="hidden md:flex md:flex-col text-left list-disc space-y-1 text-white py-1.5">
+      {points?.map((point, index) => (
           <li key={index}>{point}</li>
         ))}
       </ul>
-    </div>
+      <Link 
+                  to={`/services/${id}`}
+                  className="inline-flex items-center group"
+                >
+                  <span className="bg-yellow-400 text-black px-6 py-2 rounded-md font-semibold 
+                    group-hover:bg-yellow-500 transition-colors inline-flex items-center">
+                    View Details
+                    {/* <FaArrowRight className="ml-2 group-hover:ml-3 transition-all" /> */}
+                  </span>
+                </Link>    </div>
 
     {/* Image Section */}
-    <div className="flex-1 ">
+    <div className="flex-2 ">
       <img
         src={image}
         alt={alt || title}

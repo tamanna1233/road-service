@@ -23,11 +23,10 @@ test:{
     rollupOptions: {
       treeshake:true,
       output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            return 'vendor'; // Creates a separate chunk for third-party libraries
-          }
-        },
+        manualChunks: {
+            react: ['react', 'react-dom'],
+            router: ['react-router-dom'],
+          },
       },
     },
   }

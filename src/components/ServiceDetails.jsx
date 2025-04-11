@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { FaArrowLeft, FaCheck } from 'react-icons/fa';
 
-// Import your images here
-// import safety from '../assets/images/safety.jpg';
-// import Dispatch from '../assets/images/dispatch.jpg';
-// import Freight from '../assets/images/freight.jpg';
-// import warehouse from '../assets/images/warehouse.jpg';
-// import container from '../assets/images/container.jpg';
-// import intermodal from '../assets/images/intermodal.jpg';
+import safety from "../assets/safety.webp";
+import Dispatch from "../assets/dispatch.webp";
+import  Freight from "../assets/freight.webp";
+import warehouse from "../assets/warehouse.webp";
+import container from "../assets/containerwebp.webp";
+import intermodal from "../assets/intermodal.webp";
 
 const services = [
   {
@@ -26,7 +25,7 @@ const services = [
       "Fully FMCSA & DOT compliant",
       "Emergency and scheduled services available"
     ],
-    image: "safety", // Will be replaced with imported image
+    image: safety, // Will be replaced with imported image
     alt: "Fleet maintenance service"
   },
   {
@@ -42,7 +41,7 @@ const services = [
       "Multilingual support and professional dispatchers",
       "Maximize profits and reduce deadhead miles"
     ],
-    image: "Dispatch", // Will be replaced with imported image
+    image: Dispatch, // Will be replaced with imported image
     alt: "Dispatch services"
   },
   {
@@ -58,7 +57,7 @@ const services = [
       "Damage claims management and resolution",
       "Customized freight solutions for all industries"
     ],
-    image: "Freight", // Will be replaced with imported image
+    image: Freight, // Will be replaced with imported image
     alt: "Freight brokerage"
   },
   {
@@ -74,7 +73,7 @@ const services = [
       "Bonded and insured storage facilities",
       "Conveniently located near major ports and highways"
     ],
-    image: "warehouse", // Will be replaced with imported image
+    image: warehouse, // Will be replaced with imported image
     alt: "Warehouse storage"
   },
   {
@@ -90,7 +89,7 @@ const services = [
       "Bonded drayage available",
       "We simplify the complex port logistics process"
     ],
-    image: "container", // Will be replaced with imported image
+    image: container, // Will be replaced with imported image
     alt: "Container logistics"
   },
   {
@@ -106,20 +105,12 @@ const services = [
       "Complete tracking from origin to destination",
       "A smarter, greener way to ship freight long-distance"
     ],
-    image: "intermodal", // Will be replaced with imported image
+    image: intermodal, // Will be replaced with imported image
     alt: "Intermodal transport"
   }
 ];
 
-// This would be your image mapping in a real implementation
-const imageMap = {
-  // safety: safety,
-  // Dispatch: Dispatch,
-  // Freight: Freight,
-  // warehouse: warehouse,
-  // container: container,
-  // intermodal: intermodal
-};
+
 
 const ServiceDetail = () => {
   const { serviceId } = useParams();
@@ -130,6 +121,7 @@ const ServiceDetail = () => {
   useEffect(() => {
     // Find the service that matches the URL parameter
     const foundService = services.find(s => s.id === serviceId);
+    console.log(serviceId)
     setService(foundService);
     
     // Get 3 related services (excluding current one)
@@ -167,11 +159,11 @@ const ServiceDetail = () => {
   }
 
   return (
-    <div className="bg-neutral-50 min-h-screen">
+    <div className="bg-neutral-100 mi-h-screen">
       {/* Hero Section */}
-      <div className="bg-black text-white relative">
+      <div className="bg-white text-black relative">
         <div className="container mx-auto px-4 py-16 md:py-24">
-          <Link to="/services" className="inline-flex items-center text-yellow-400 mb-8 hover:underline">
+          <Link to="/services" className="inline-flex items-center mb-8 text-lg font-semibold  gap-4">
             <FaArrowLeft className="mr-2" /> Back to Services
           </Link>
           
@@ -179,7 +171,7 @@ const ServiceDetail = () => {
             <div>
               <h1 className="text-3xl md:text-4xl font-bold mb-4">{service.title}</h1>
               <div className="h-1 w-20 bg-yellow-400 mb-6"></div>
-              <h2 className="text-xl md:text-2xl font-light mb-6 text-gray-300">{service.subtitle}</h2>
+              <h2 className="text-xl md:text-2xl font-light mb-6 ">{service.subtitle}</h2>
               <p className="text-lg mb-6">{service.description}</p>
               <Link 
                 to="/contact" 
@@ -191,8 +183,8 @@ const ServiceDetail = () => {
             
             <div className="hidden md:block">
               {/* Replace this with your actual image when implementing */}
-              <div className="bg-gray-800 h-64 rounded-lg flex items-center justify-center">
-                <p className="text-gray-400">Service Image: {service.alt}</p>
+              <div className="flex items-center justify-center">
+                <img src={service.image} alt={service.alt}  className=' object-scale-down rounded-lg'/>
               </div>
             </div>
           </div>
@@ -237,18 +229,18 @@ const ServiceDetail = () => {
           <div className="mt-10 pt-10 border-t border-gray-200">
             <h3 className="text-2xl font-bold mb-6">Why Choose Our {service.title}</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h4 className="text-lg font-semibold mb-2">Experience & Expertise</h4>
+              <div className="bg-black text-white p-6 rounded-lg">
+                <h4 className="text-lg font-semibold mb-2 text-yellow-400">Experience & Expertise</h4>
                 <p>Our team brings years of specialized experience in {service.title.toLowerCase()}, ensuring top-quality service delivery.</p>
               </div>
               
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h4 className="text-lg font-semibold mb-2">Tailored Solutions</h4>
+              <div className="bg-black text-white p-6 rounded-lg">
+                <h4 className="text-lg font-semibold mb-2 text-yellow-400">Tailored Solutions</h4>
                 <p>We customize our approach to meet your specific needs, not offering one-size-fits-all solutions.</p>
               </div>
               
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h4 className="text-lg font-semibold mb-2">24/7 Support</h4>
+              <div className="bg-black text-white p-6 rounded-lg">
+                <h4 className="text-lg font-semibold mb-2 text-yellow-400">24/7 Support</h4>
                 <p>Our commitment to your success means we're available whenever you need us, providing continuous support.</p>
               </div>
             </div>
@@ -274,57 +266,41 @@ const ServiceDetail = () => {
       
       {/* Related Services */}
       <div className="container mx-auto px-4 py-16">
-        <h3 className="text-2xl font-bold mb-8">Related Services</h3>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {relatedServices.map((related) => (
-            <Link key={related.id} to={`/services/${related.id}`} className="group">
-              <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                {/* Replace with actual image */}
-                <div className="bg-gray-200 h-48 flex items-center justify-center">
-                  <p className="text-gray-600">Image: {related.alt}</p>
-                </div>
-                
-                <div className="p-6">
-                  <h4 className="text-lg font-semibold mb-2 group-hover:text-yellow-500 transition-colors">
-                    {related.title}
-                  </h4>
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                    {related.description}
-                  </p>
-                  <span className="text-yellow-500 font-medium inline-flex items-center">
-                    Learn More <span className="ml-1 group-hover:ml-2 transition-all">→</span>
-                  </span>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
-      
-      {/* FAQ Section - Optional */}
-      <div className="bg-gray-50 py-16">
-        <div className="container mx-auto px-4">
-          <h3 className="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h3>
+  <h3 className="text-2xl font-bold mb-8">Related Services</h3>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {relatedServices.map((related) => (
+      <Link key={related.id} to={`/services/${related.id}`} className="group">
+        <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
           
-          <div className="max-w-3xl mx-auto">
-            <div className="mb-6 bg-white rounded-lg shadow-sm p-6">
-              <h4 className="text-lg font-semibold mb-2">How quickly can you start providing {service.title}?</h4>
-              <p className="text-gray-700">We can typically begin service within 24-48 hours of contract approval, with expedited options available for urgent needs.</p>
-            </div>
-            
-            <div className="mb-6 bg-white rounded-lg shadow-sm p-6">
-              <h4 className="text-lg font-semibold mb-2">Do you offer customized {service.title.toLowerCase()} packages?</h4>
-              <p className="text-gray-700">Yes, we tailor our services to fit your specific business requirements and can create custom solutions based on your needs.</p>
-            </div>
-            
-            <div className="mb-6 bg-white rounded-lg shadow-sm p-6">
-              <h4 className="text-lg font-semibold mb-2">What industries do you typically serve with this service?</h4>
-              <p className="text-gray-700">Our {service.title.toLowerCase()} are utilized across multiple sectors including retail, manufacturing, food & beverage, construction, and more.</p>
-            </div>
+          {/* Fixed size image container */}
+          <div className="w-full h-48 bg-gray-200 flex items-center justify-center">
+            <img
+              src={related.image}
+              alt={related.alt}
+              className="w-full h-full object-cover" // consistent sizing
+            />
+          </div>
+
+          <div className="p-6">
+            <h4 className="text-lg font-semibold mb-2 group-hover:text-yellow-500 transition-colors">
+              {related.title}
+            </h4>
+            <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+              {related.description}
+            </p>
+            <span className="text-yellow-500 font-medium inline-flex items-center">
+              Learn More <span className="ml-1 group-hover:ml-2 transition-all">→</span>
+            </span>
           </div>
         </div>
-      </div>
+      </Link>
+    ))}
+  </div>
+</div>
+
+      
+    
     </div>
   );
 };

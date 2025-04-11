@@ -6,23 +6,23 @@ import {  LiaLinkedinIn } from "react-icons/lia";
 import logo from '../assets/logo3.png'
 import { MdOutlineEmail } from "react-icons/md"
 import { CiLocationOn } from "react-icons/ci"
+import { Link } from "react-router-dom";
 export default function Footer() {
   const Quicllinks=[
-    { name: "Home", link: "#" },
-    { name: "About Us", link: "#" },
-    { name: "Services", link: "#" },
-    { name: "Testimonials", link: "#" },
-    { name: "Blog", link: "#" },
-    { name: "Contact", link: "#" },
+    { name: "Home", link: "/" },
+    { name: "About Us", link: "/about-us" },
+    { name: "Testimonials", link: "/testimonial" },
+    { name: "Blog", link: "/blogs" },
+    { name: "Contact", link: "/contact" },
   ]
 
   const services=[
-    "Safety & Maintenance Services",
-    "Dispatch Services",
-    "Freight Brokerage Services",
-    "Warehousing Solutions",
-    "Container & Drayage Services",
-    "Intermodal Logistics"
+   { name:"Safety & Maintenance Services", link:"safety-maintenance"},
+   {name: "Dispatch Services" ,link:"dispatch"},
+   { name:"Freight Brokerage Services",link:"freight-brokerage"},
+    {name:"Warehousing Solutions",link:"warehousing"},
+    {name:"Container & Drayage Services",link:"container-drayage"},
+   {name: "Intermodal Logistics",link:"intermodal"}
   ]
   return (
     <>
@@ -52,7 +52,7 @@ export default function Footer() {
 
           {Quicllinks.map(({name,link},index) => (
             <ol className="space-y-3" key={index}>
-            <li><a href={link} className="hover:text-white transition duration-300 flex items-center gap-2" aria-label={name}><FaAngleRight/> {name}</a></li>
+            <li><Link to={link} className="hover:text-white transition duration-300 flex items-center gap-2" aria-label={name}><FaAngleRight/> {name}</Link></li>
             
           </ol>))}
         </div>
@@ -61,16 +61,16 @@ export default function Footer() {
         <div>
   <h3 className="text-xl font-bold mb-6 text-yellow-500">Our Services</h3>
   <ul className="space-y-3">
-    {services.map((name, index) => (
+    {services.map(({name,link}, index) => (
       <li className="flex items-center gap-2 text-white" key={index}>
         <FaAngleRight />
-        <a
-          href={name}
+        <Link
+          to={`/services/${link}`}
           className="hover:text-white transition duration-300"
-          aria-label={name}
+          aria-label={link}
         >
           {name}
-        </a>
+        </Link>
       </li>
     ))}
   </ul>
