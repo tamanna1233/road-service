@@ -58,7 +58,7 @@ const LeadershipCard = ({ title, description, icon }) => (
 
 const LeadershipValues = () => {
   return (
-    <div className="container mx-auto mt-4">
+    <div className="container mx-auto mt-4 mb-6">
       <div className="text-center mb-12">
         <h3 className="text-2xl font-bold mb-4 text-black font-barlow">Our Leadership Values</h3>
         <div className="h-1 w-20 bg-yellow-400 mx-auto" />

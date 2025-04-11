@@ -1,13 +1,12 @@
 import React from 'react';
 import { FaLinkedin, FaXTwitter } from 'react-icons/fa6';
-
+import founderimage from "../assets/home.webp"
 const founders = [
   {
     name: 'Rahul Walia',
     role: 'Founder',
     title: 'Safety Expert',
-    image:
-      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8Z21haWwlMjBlbWFpbCUyMHRoYXQlRTIlODAlOTlzJTIwaW50dWl0aXZlJTJDJTIwZWZmaWNpZW50JTJDJTIwdXNlZnVsLiUyMHN0b3JhZ2UlMkMlMjBsZXNzJTIwc3BhbSUyQyUyMG1vYmlsZSUyMGFjY2Vzcy4lMjBmb3VuZGVycyUyMHByb2Zlc3Npb25hbHxlbnwwfDB8fHwxNzQ0MTY3MTg0fDA&ixlib=rb-4.0.3&q=80&w=1080',
+    image: bg,
     alt: 'Rahul Walia - Founder & Safety Expert',
     expertise: [
       'Fleet Operations & Management',
@@ -19,8 +18,7 @@ const founders = [
     name: 'Karan Dhatwalia',
     role: 'Co-Founder',
     title: 'Logistics Strategist',
-    image:
-    'https://images.unsplash.com/photo-1507679799987-c73779587ccf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8Z21haWwlMjBlbWFpbCUyMHRoYXQlRTIlODAlOTlzJTIwaW50dWl0aXZlJTJDJTIwZWZmaWNpZW50JTJDJTIwdXNlZnVsLiUyMHN0b3JhZ2UlMkMlMjBsZXNzJTIwc3BhbSUyQyUyMG1vYmlsZSUyMGFjY2Vzcy4lMjBmb3VuZGVycyUyMHByb2Zlc3Npb25hbHxlbnwwfDB8fHwxNzQ0MTY3MTg0fDA&ixlib=rb-4.0.3&q=80&w=1080',
+    image:bg,
     alt: ' Karan Dhatwalia- Co-Founder & Operations Head',
     expertise: [
       'Dispatching Systems',
