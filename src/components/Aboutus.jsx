@@ -28,6 +28,8 @@ const About = () => {
               width="5066"
               height="3377"
               className="w-full h-full object-cover rounded-lg shadow-md"
+              loading='lazy'
+
             />
             <p className="text-xs text-gray-500 mt-1">Photo by Hunters Race</p>
           </div>

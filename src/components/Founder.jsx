@@ -54,6 +54,7 @@ const Founders = () => {
                         e.target.onerror = null;
                         e.target.src = 'https://placehold.co/800x800/000000/FFD700?text=No+Image';
                       }}
+                      loading='lazy'
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-24"></div>
                     <div className="absolute bottom-4 left-4 text-xs text-white opacity-70">{founder.photoCredit}</div>

@@ -94,6 +94,7 @@ const IntroductionSection = () => {
                 alt="Professional business meeting"
                 onError={(e) => (e.target.src = 'https://placehold.co/800x400/000000/FFD700?text=Walia+Logistics')}
                 className="w-full h-52 object-cover rounded-lg shadow-md"
+                loading='lazy'
               />
             </div>
             <div>
@@ -102,6 +103,7 @@ const IntroductionSection = () => {
                 alt="Logistics professional at work"
                 onError={(e) => (e.target.src = 'https://placehold.co/400x300/000000/FFD700?text=Logistics')}
                 className="w-full h-48 object-cover rounded-lg shadow-md"
+                loading='lazy'
               />
             </div>
             <div>
@@ -110,6 +112,7 @@ const IntroductionSection = () => {
                 alt="Professional executive"
                 onError={(e) => (e.target.src = 'https://placehold.co/400x300/000000/FFD700?text=Executive')}
                 className="w-full h-48 object-cover rounded-lg shadow-md"
+                loading='lazy'
               />
             </div>
           </div>

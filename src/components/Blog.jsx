@@ -152,6 +152,8 @@ const Blog = () => {
                   src={urlFor(post.mainImage).width(600).url()}
                   alt={post.title}
                   className="w-full h-56 object-cover"
+                  loading='lazy'
+
                 />
               ) : (
                 <div className="w-full h-56 bg-gray-300 flex items-center justify-center text-gray-600">No Image</div>
@@ -175,6 +177,8 @@ const Blog = () => {
                         src={urlFor(post.author.image).width(100).url()}
                         alt={post.author.name}
                         className="w-full h-full object-cover"
+                        loading='lazy'
+
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center text-white text-xs">No Img</div>

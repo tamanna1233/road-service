@@ -184,7 +184,7 @@ const ServiceDetail = () => {
             <div className="hidden md:block">
               {/* Replace this with your actual image when implementing */}
               <div className="flex items-center justify-center">
-                <img src={service.image} alt={service.alt}  className=' object-scale-down rounded-lg'/>
+                <img src={service.image} alt={service.alt}  className=' object-scale-down rounded-lg'   loading='lazy' />
               </div>
             </div>
           </div>
@@ -279,6 +279,8 @@ const ServiceDetail = () => {
               src={related.image}
               alt={related.alt}
               className="w-full h-full object-cover" // consistent sizing
+              loading='lazy'
+
             />
           </div>
 

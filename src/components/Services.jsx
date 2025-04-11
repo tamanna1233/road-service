@@ -136,6 +136,8 @@ const ServiceCard = ({ title, image, description, alt, isReversed, icon, points,
         src={image}
         alt={alt || title}
         className="w-full h-full object-cover"
+        loading='lazy'
+
       />
     </div>
   </div>

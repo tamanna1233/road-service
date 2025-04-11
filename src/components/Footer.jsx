@@ -30,7 +30,7 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mb-8">
         {/* Company Info */}
         <div>
-         <img src={logo} alt="brand logo" className="h-24 mx-auto" />
+         <img src={logo} alt="brand logo" className="h-24 mx-auto"  loading='lazy'/>
 
           <p className="px-2 md:px-8 text-xl py-2">
           Your trusted partner in complete logistics, transportation, and fleet management services across North America since 2016.          </p>
