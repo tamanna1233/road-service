@@ -13,7 +13,8 @@ const Homepage = lazy(() => import('./pages/Homepage.jsx'))
 const ServicesSection = lazy(() => import('./components/Services.jsx'))
 const AboutUsPage = lazy(() => import('./pages/AboutPage.jsx'))
 const Testimonials = lazy(() => import('./components/Testamonials.jsx'))
-const Contact = lazy(() => import('./components/Contact.jsx'))
+const Contact = lazy(() => import('./pages/Contactpage.jsx'))
+const Servicespage =lazy(()=>import("./pages/ServicePage.jsx"))
 const router=createBrowserRouter(
   createRoutesFromElements(
   
@@ -26,6 +27,7 @@ const router=createBrowserRouter(
     <Route path='/testimonial' element={<Testimonials/>}/>
     <Route path='/contact' element={<Contact/>}/>
     <Route path='/blogs' element={<BlogList/>}/>
+    <Route path='/services:id' element={Servicespage}/>
     <Route path="/blog/:slug" element={<BlogDetails />} />
 
     </Route>
