@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaLinkedin, FaXTwitter } from 'react-icons/fa6';
-import founderimage from "../assets/home.webp"
+import bg from "../assets/home.webp"
 const founders = [
   {
     name: 'Rahul Walia',

@@ -77,7 +77,7 @@ const Whyus = () => {
         </div>
       </div>
 
-      {/* Our Journey - improved timeline with centered timestamps */}
+      {/* Our Journey - improved timeline with centered timestamps and alternating cards */}
       <div className="bg-neutral-100 rounded-xl p-4 sm:p-8 w-full max-w-6xl mx-auto">
         <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-10 text-center text-black font-barlow">
           Our Journey
@@ -90,7 +90,7 @@ const Whyus = () => {
           {/* Timeline Items */}
           <div className="space-y-16 sm:space-y-24 relative">
             {timelineEvents.map((event, index) => (
-              <div key={index} className={`relative ${index % 2 === 0 ? '' : ''}`}>
+              <div key={index} className="relative">
                 {/* Year Marker - Centered on the line */}
                 <div className="absolute left-4 sm:left-1/2 transform -translate-x-1/2 -translate-y-12 z-10">
                   <div className="w-10 h-10 sm:w-14 sm:h-14 bg-black rounded-full flex items-center justify-center border-4 border-yellow-400">
@@ -98,13 +98,18 @@ const Whyus = () => {
                   </div>
                 </div>
                 
-                {/* Content Cards - Different positioning for mobile vs desktop */}
-                <div className="sm:grid sm:grid-cols-2 sm:gap-8">
-                  {/* For mobile: always on right side of line */}
-                  <div className={`ml-12 sm:ml-0 sm:col-start-${index % 2 === 0 ? '2' : '1'} sm:col-span-1`}>
+                {/* Content Cards - Proper alternating layout */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  {/* Mobile: Always right of line */}
+                  {/* Desktop: Alternate left and right */}
+                  <div className={`
+                    col-span-1
+                    ${index % 2 === 0 ? 'sm:col-start-2' : 'sm:col-start-1'}
+                    ${index % 2 === 0 ? 'ml-12 sm:ml-0' : 'ml-12 sm:ml-0'}
+                  `}>
                     <div className={`
-                      bg-white p-4 sm:p-6 rounded-lg shadow-md 
-                      ${index % 2 === 1 ? 'sm:text-right sm:mr-8' : 'sm:ml-8'}
+                      bg-white p-4 sm:p-6 rounded-lg shadow-md
+                      ${index % 2 === 1 ? 'sm:text-right' : ''}
                     `}>
                       <h4 className="text-base sm:text-lg font-bold text-black mb-1 sm:mb-2 font-barlow">
                         {event.title}
@@ -114,11 +119,14 @@ const Whyus = () => {
                       </p>
                     </div>
                   </div>
+                  
+                  {/* Empty column for alternating layout */}
+                  <div className={`hidden sm:block col-span-1 ${index % 2 === 0 ? 'sm:col-start-1' : 'sm:col-start-2'}`}></div>
                 </div>
                 
-                {/* Connect line from center to card (visible only on desktop) */}
+                {/* Connector lines from timeline to card */}
                 <div className={`
-                  hidden sm:block absolute top-0  
+                  hidden sm:block absolute top-0 bg-yellow-400
                   ${index % 2 === 0 ? 'left-1/2' : 'right-1/2 transform translate-x-1/2'}
                 `}></div>
               </div>
