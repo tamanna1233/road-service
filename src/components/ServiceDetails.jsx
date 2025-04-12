@@ -163,7 +163,7 @@ const ServiceDetail = () => {
       {/* Hero Section */}
       <div className="bg-white text-black relative">
         <div className="container mx-auto px-4 py-16 md:py-24">
-          <Link to="/services" className="inline-flex items-center mb-8 text-lg font-semibold  gap-4">
+          <Link to="/" className="inline-flex items-center mb-8 text-lg font-semibold  gap-4">
             <FaArrowLeft className="mr-2" /> Back to Services
           </Link>
           

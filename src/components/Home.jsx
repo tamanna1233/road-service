@@ -5,7 +5,6 @@ import bg from "../assets/home.webp"
 const Home = () => {
   return (
     <>
-      {/* Primary Meta Tags */}
       
 
       {/* Hero Section */}
