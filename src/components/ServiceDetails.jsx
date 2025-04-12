@@ -151,7 +151,7 @@ const ServiceDetail = () => {
       <div className="container mx-auto px-4 py-16 text-center">
         <h1 className="text-2xl font-bold mb-4">Service Not Found</h1>
         <p className="mb-8">The service you're looking for doesn't exist.</p>
-        <Link to="/services" className="bg-yellow-400 text-black px-6 py-2 rounded-md font-semibold hover:bg-yellow-500 transition-colors">
+        <Link to="/" className="bg-yellow-400 text-black px-6 py-2 rounded-md font-semibold hover:bg-yellow-500 transition-colors">
           Back to Services
         </Link>
       </div>
