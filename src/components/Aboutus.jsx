@@ -60,15 +60,15 @@ const About = () => {
               </div>
               <div>
                 <h4 className="text-xl font-bold text-black mb-2 font-barlow">Rahul Walia</h4>
-                <p className="text-yellow-600 font-medium mb-3 font-barlow">Founder &amp; Safety Expert</p>
+                <p className="text-blackfont-medium mb-3 font-barlow">Founder &amp; Safety Expert</p>
                 <p className="text-gray-700 mb-4 font-roboto">
                   Expert in fleet operations, safety, and DOT compliance with a passion for building safer transportation systems.
                 </p>
-                <div className="flex space-x-3">
-            <a href="https://www.linkedin.com/in/rahulwalia" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl">
+                <div className="flex space-x-3"> 
+            <a href="https://www.linkedin.com/in/rahulwalia" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl" aria-label='LinkedIn Profile'>
           <FaLinkedin />
          </a>
-        <a href="https://twitter.com/rahulwalia" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl">
+        <a href="https://twitter.com/rahulwalia" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl" aria-label='Twitter Profile'>
        <FaXTwitter />
        </a>
       </div>
@@ -82,15 +82,15 @@ const About = () => {
               </div>
               <div>
                 <h4 className="text-xl font-bold text-black mb-2 font-barlow">Karan Dhatwalia</h4>
-                <p className="text-yellow-600 font-medium mb-3 font-barlow">Logistics Strategist</p>
+                <p className="text-black font-medium mb-3 font-barlow">Logistics Strategist</p>
                 <p className="text-gray-700 mb-4 font-roboto">
                   Expert in dispatching, intermodal logistics, and warehousing with a focus on optimizing end-to-end supply chains.
                 </p>
                 <div className="flex space-x-3">
-            <a href="https://www.linkedin.com/in/rahulwalia" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl">
+            <a href="https://www.linkedin.com/in/rahulwalia" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl" aria-label='LinkedIn Profile'>
           <FaLinkedin />
          </a>
-        <a href="https://twitter.com/rahulwalia" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl">
+        <a href="https://twitter.com/rahulwalia" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl" aria-label='Twitter Profile'>
        <FaXTwitter />
        </a>
       </div>

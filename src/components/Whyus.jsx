@@ -79,9 +79,9 @@ const Whyus = () => {
 
       {/* Our Journey - improved timeline with centered timestamps and alternating cards */}
       <div className="bg-neutral-100 rounded-xl p-4 sm:p-8 w-full max-w-6xl mx-auto">
-        <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-10 text-center text-black font-barlow">
+        <h2 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-10 text-center text-black font-barlow">
           Our Journey
-        </h3>
+        </h2>
 
         <div className="relative py-8">
           {/* Timeline Line */}

@@ -66,7 +66,7 @@ const Founders = () => {
                     <h3 className="text-2xl font-bold text-black font-barlow">{founder.name}</h3>
                     <div className="ml-3 px-3 py-1 bg-yellow-400 rounded-full text-xs font-medium text-black">{founder.role}</div>
                   </div>
-                  <p className="text-yellow-600 font-semibold mb-4 font-barlow">{founder.title}</p>
+                  <p className="text-black font-semibold mb-4 font-barlow">{founder.title}</p>
 
                   <div className="mb-6">
                     <p className="text-gray-700 mb-4 font-roboto">
@@ -82,7 +82,7 @@ const Founders = () => {
                     <ul className="space-y-2">
                       {founder.expertise.map((item, i) => (
                         <li key={i} className="flex items-center">
-                          <svg className="w-5 h-5 text-yellow-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                          <svg className="w-5 h-5 text-black mr-2" fill="currentColor" viewBox="0 0 20 20">
                             <path
                               fillRule="evenodd"
                               d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -96,12 +96,17 @@ const Founders = () => {
                   </div>
 
                   <div className="flex space-x-4 mt-6">
-                    <a href="#" className="text-gray-600 hover:text-black transition-colors duration-300">
-                      <FaLinkedin className="w-6 h-6" />
-                    </a>
-                    <a href="#" className="text-gray-600 hover:text-black transition-colors duration-300">
-                      <FaXTwitter className="w-6 h-6" />
-                    </a>
+                  <a href="#" 
+                 className="text-gray-600 hover:text-black transition-colors duration-300" 
+                 aria-label="LinkedIn Profile">
+                <FaLinkedin className="w-6 h-6" />
+              </a>
+              <a href="#" 
+                 className="text-gray-600 hover:text-black transition-colors duration-300" 
+                 aria-label="Twitter Profile">
+                <FaXTwitter className="w-6 h-6" />
+              </a>
+
                   </div>
                 </div>
               </div>
