@@ -111,9 +111,9 @@ const Whyus = () => {
                       bg-white p-4 sm:p-6 rounded-lg shadow-md
                       ${index % 2 === 1 ? 'sm:text-right' : ''}
                     `}>
-                      <h4 className="text-base sm:text-lg font-bold text-black mb-1 sm:mb-2 font-barlow">
+                      <h3 className="text-base sm:text-lg font-bold text-black mb-1 sm:mb-2 font-barlow">
                         {event.title}
-                      </h4>
+                      </h3>
                       <p className="text-gray-700 text-sm sm:text-base font-roboto">
                         {event.description}
                       </p>
