@@ -250,7 +250,7 @@ const Blog = () => {
                     </div>
                     <div>
                       <p className="font-semibold text-black font-barlow">{featuredPost.author.name}</p>
-                      <p className="text-xs text-gray-500 font-roboto">
+                      <p className="text-xs text-gray-900 font-roboto ">
                         {Math.ceil(featuredPost.excerpt.split(' ').length / 200)} min read
                       </p>
                     </div>
