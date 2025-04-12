@@ -291,7 +291,7 @@ const ServiceDetail = () => {
             <p className="text-gray-600 text-sm mb-4 line-clamp-2">
               {related.description}
             </p>
-            <span className="text-yellow-500 font-medium inline-flex items-center">
+            <span className="text-black hover:text-yellow-400 font-medium inline-flex items-center">
               Learn More <span className="ml-1 group-hover:ml-2 transition-all">→</span>
             </span>
           </div>
