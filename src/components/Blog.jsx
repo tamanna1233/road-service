@@ -227,7 +227,6 @@ const Blog = () => {
                       <span className="float-left text-4xl font-bold mr-2 mt-1 text-black font-barlow">
                         {featuredPost.excerpt.charAt(0)}
                       </span>
-                      {console.log(featuredPost.excerpt.substring(1))}
                       {featuredPost.excerpt.substring(1)}
                     </p>
                   </div>
