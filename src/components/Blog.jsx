@@ -336,16 +336,17 @@ const Blog = () => {
                   </div>
                   
                   {/* Read More Link */}
-                  <a 
-                    href={`/blog/${post.slug.current}`} 
-                    className="text-sm text-black font-semibold hover:text-yellow-600 transition-colors duration-300 font-barlow flex items-center"
-                  
-                    aria-label={`read more about ${post.slug.current}`}>
-                    Read More
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </a>
+                 <a 
+  href={`/blog/${post.slug.current}`} 
+  className="text-sm text-black font-semibold hover:text-yellow-600 transition-colors duration-300 font-barlow flex items-center"
+  aria-label={`Read more: ${post.title}`}
+>
+  {`Read more`}
+  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+  </svg>
+</a>
+
                 </div>
               </div>
             </div>
