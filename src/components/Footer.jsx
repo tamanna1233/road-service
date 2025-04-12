@@ -82,11 +82,18 @@ export default function Footer() {
           <h3 className="text-xl font-bold mb-6 text-yellow-500">Contact Us</h3>
           <ul className="space-y-4">
             <li className="flex items-center gap-2">
-           <FaPhone size={25} className=" text-yellow-400"/> 85804-66164
+           <FaPhone size={25} className=" text-yellow-400"/>
+          <a 
+          href="tel: +91 85804-66164" 
+          title="Call +91 98765 43210" 
+           aria-label="Call us at +91 98765 43210">85804-66164</a> 
             </li>
             <li className="flex items-center gap-2 ">
               <MdOutlineEmail size={25}className=" text-yellow-400"/>
-              Rahulwalia@gmail.com
+              
+             <a href="mailto:Rahulwalia@gmail.com"
+             title="Email Rahulwalia@gmail.com<"
+             aria-label="Rahulwalia@gmail.com">Rahulwalia@gmail.com</a> 
             </li>
             <li className="flex items-center gap-2">
              <CiLocationOn size={25} className=" text-yellow-400"/> North America
