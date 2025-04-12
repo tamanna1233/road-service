@@ -16,6 +16,8 @@ const Blog = () => {
       _id,
       title,
       slug,
+      excerpt,
+      body,
       _createdAt,
       categories[]->{title},
       author->{name, image},
@@ -23,11 +25,30 @@ const Blog = () => {
     }`;
 
     client.fetch(query).then((data) => {
-      setBlogs(data);
-      setFilteredBlogs(data);
+      // Process posts to extract preview text if no excerpt exists
+      const processedData = data.map(post => {
+        if (!post.excerpt && post.body) {
+          // Extract text from the first block of the body if it exists
+          const firstBlock = Array.isArray(post.body) ? post.body[0] : null;
+          if (firstBlock && firstBlock.children && firstBlock.children.length > 0) {
+            post.excerpt = firstBlock.children
+              .map(child => child.text)
+              .join(" ")
+              .substring(0, 150) + "...";
+          } else {
+            post.excerpt = "Read this article to learn more about our logistics solutions and industry insights.";
+          }
+        } else if (!post.excerpt) {
+          post.excerpt = "Read this article to learn more about our logistics solutions and industry insights.";
+        }
+        return post;
+      });
+
+      setBlogs(processedData);
+      setFilteredBlogs(processedData);
 
       const allCats = new Set();
-      data.forEach((post) => {
+      processedData.forEach((post) => {
         post.categories?.forEach((cat) => allCats.add(cat.title));
       });
       setCategories(["All", ...Array.from(allCats)]);
@@ -72,7 +93,18 @@ const Blog = () => {
     setFilteredBlogs(updated);
   }, [category, searchTerm, blogs]);
 
-  if(!filteredBlogs) return <LoadingAnimation/>
+  if (!filteredBlogs) return <LoadingAnimation />;
+
+  // Separate featured post (first post) from the rest
+  const featuredPost = filteredBlogs.length > 0 ? filteredBlogs[0] : null;
+  const remainingPosts = filteredBlogs.length > 0 ? filteredBlogs.slice(1) : [];
+
+  // Format date helper function
+  const formatDate = (dateString) => {
+    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString('en-US', options);
+  };
+
   return (
     <section id="blog" className="py-20 bg-white min-h-screen">
       <div className="container mx-auto px-4">
@@ -142,62 +174,188 @@ const Blog = () => {
           </div>
         </div>
 
-        {/* Blog Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {filteredBlogs.map((post) => (
-            <div key={post._id} className="bg-neutral-100 rounded-xl overflow-hidden shadow">
-              {/* Image */}
-              {post.mainImage ? (
-                <img
-                  src={urlFor(post.mainImage).width(600).url()}
-                  alt={post.title}
-                  className="w-full h-56 object-cover"
-                  loading='lazy'
-
-                />
-              ) : (
-                <div className="w-full h-56 bg-gray-300 flex items-center justify-center text-gray-600">No Image</div>
-              )}
-              {/* Content */}
-              <div className="p-6">
-                <div className="flex flex-wrap gap-2 mb-2">
-                  {(post.categories || []).map((cat, index) => (
-                    <span key={index} className="text-xs bg-yellow-400 text-black px-2 py-1 rounded-md font-barlow">
-                      {cat.title}
-                    </span>
-                  ))}
-                </div>
-                <h3 className="text-xl font-bold text-black my-2 font-barlow">{post.title}</h3>
-                <p className="text-gray-700 text-sm font-roboto line-clamp-3 mb-3">{post.excerpt}</p>
-                {/* Author */}
-                <div className="flex items-center mb-3">
-                  <div className="w-9 h-9 rounded-full overflow-hidden bg-black mr-3">
-                    {post.author?.image ? (
-                      <img
-                        src={urlFor(post.author.image).width(100).url()}
-                        alt={post.author.name}
-                        className="w-full h-full object-cover"
-                        loading='lazy'
-
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center text-white text-xs">No Img</div>
-                    )}
+        {/* Featured Blog Post (Landscape) */}
+        {featuredPost && (
+          <div className="mb-16 overflow-hidden rounded-xl shadow-lg transition-transform duration-300 hover:shadow-xl bg-neutral-100">
+            <div className="flex flex-col lg:flex-row">
+              {/* Featured Image */}
+              <div className="w-full lg:w-1/2 h-56 lg:h-auto relative group">
+                {featuredPost.mainImage ? (
+                  <img
+                    src={urlFor(featuredPost.mainImage).width(1200).height(800).url()}
+                    alt={featuredPost.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gray-300 flex items-center justify-center text-gray-600">
+                    <span className="text-lg font-semibold">Featured Article</span>
                   </div>
-                  <div>
-                    <p className="font-semibold text-black font-barlow">{post.author.name}</p>
-                    <p className="text-xs text-gray-500 font-roboto">
-                      { new Date(post?._createdAt).toDateString()} 
+                )}
+                
+                {/* Publication Date Overlay */}
+                <div className="absolute top-4 left-4 bg-black bg-opacity-80 text-white px-3 py-2 rounded-md text-sm font-barlow">
+                  {formatDate(featuredPost._createdAt)}
+                </div>
+              </div>
+              
+              {/* Featured Content */}
+              <div className="w-full lg:w-1/2 p-6 lg:p-8 flex flex-col justify-between">
+                <div>
+                  {/* Featured Badge & Categories */}
+                  <div className="flex flex-wrap gap-2 mb-4 items-center">
+                    <span className="bg-yellow-400 text-black px-3 py-1 rounded-md font-barlow text-sm font-bold">
+                      Featured
+                    </span>
+                    {(featuredPost.categories || []).map((cat, index) => (
+                      <span key={index} className="text-xs bg-black text-white px-2 py-1 rounded-md font-barlow">
+                        {cat.title}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-2xl lg:text-3xl font-bold text-black mb-4 font-barlow leading-tight">
+                    {featuredPost.title}
+                  </h3>
+                  
+                  {/* Excerpt with styled first letter */}
+                  <div className="prose prose-lg text-gray-700 font-roboto mb-6">
+                    <p>
+                      <span className="float-left text-4xl font-bold mr-2 mt-1 text-black font-barlow">
+                        {featuredPost.excerpt.charAt(0)}
+                      </span>
+                      {console.log(featuredPost.excerpt.substring(1))}
+                      {featuredPost.excerpt.substring(1)}
                     </p>
                   </div>
                 </div>
-                <a href={`/blog/${post.slug.current}`} className="text-sm text-black font-semibold hover:text-yellow-600 transition-colors duration-300 font-barlow">
-                  Read Full Article →
-                </a>
+                
+                <div>
+                  {/* Author */}
+                  <div className="flex items-center mb-5">
+                    <div className="w-10 h-10 rounded-full overflow-hidden bg-black mr-3">
+                      {featuredPost.author?.image ? (
+                        <img
+                          src={urlFor(featuredPost.author.image).width(100).url()}
+                          alt={featuredPost.author.name}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-white text-xs">No Img</div>
+                      )}
+                    </div>
+                    <div>
+                      <p className="font-semibold text-black font-barlow">{featuredPost.author.name}</p>
+                      <p className="text-xs text-gray-500 font-roboto">
+                        {Math.ceil(featuredPost.excerpt.split(' ').length / 200)} min read
+                      </p>
+                    </div>
+                  </div>
+                  
+                  {/* Read More Button */}
+                  <a 
+                    href={`/blog/${featuredPost.slug.current}`}
+                    className="inline-block bg-black text-white hover:bg-yellow-400 hover:text-black font-barlow py-2 px-6 rounded-md transition-colors duration-300"
+                  >
+                    Read Full Article
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Blog Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {remainingPosts.map((post) => (
+            <div 
+              key={post._id} 
+              className="bg-neutral-100 rounded-xl overflow-hidden shadow transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]"
+            >
+              {/* Image with Date Overlay */}
+              <div className="relative overflow-hidden">
+                {post.mainImage ? (
+                  <img
+                    src={urlFor(post.mainImage).width(600).url()}
+                    alt={post.title}
+                    className="w-full h-56 object-cover transition-transform duration-300 hover:scale-105"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="w-full h-56 bg-gray-300 flex items-center justify-center text-gray-600">No Image</div>
+                )}
+                
+                {/* Date Overlay */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent text-white p-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm font-barlow">{formatDate(post._createdAt)}</span>
+                    <span className="text-xs font-roboto">{Math.ceil(post.excerpt.split(' ').length / 200)} min read</span>
+                  </div>
+                </div>
+                
+                {/* Category Label */}
+                {post.categories && post.categories.length > 0 && (
+                  <span className="absolute top-4 right-4 bg-yellow-400 text-black text-xs px-2 py-1 rounded-md font-barlow">
+                    {post.categories[0].title}
+                  </span>
+                )}
+              </div>
+              
+              {/* Content */}
+              <div className="p-6">
+                {/* Title */}
+                <h3 className="text-xl font-bold text-black mb-3 font-barlow line-clamp-2 hover:text-yellow-600 transition-colors duration-300">
+                  <a href={`/blog/${post.slug.current}`}>{post.title}</a>
+                </h3>
+                
+                {/* Article Excerpt */}
+                <div className="mb-4">
+                  <p className="text-gray-700 text-sm font-roboto line-clamp-4">{post.excerpt}</p>
+                </div>
+                
+                {/* Footer with author */}
+                <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 rounded-full overflow-hidden bg-black mr-2">
+                      {post.author?.image ? (
+                        <img
+                          src={urlFor(post.author.image).width(100).url()}
+                          alt={post.author.name}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-white text-xs">No Img</div>
+                      )}
+                    </div>
+                    <p className="text-sm font-barlow">{post.author.name}</p>
+                  </div>
+                  
+                  {/* Read More Link */}
+                  <a 
+                    href={`/blog/${post.slug.current}`} 
+                    className="text-sm text-black font-semibold hover:text-yellow-600 transition-colors duration-300 font-barlow flex items-center"
+                  >
+                    Read More
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           ))}
         </div>
+        
+        {/* No Results Message */}
+        {filteredBlogs.length === 0 && (
+          <div className="text-center py-16">
+            <h3 className="text-xl font-barlow mb-2">No articles found</h3>
+            <p className="text-gray-600 font-roboto">Try adjusting your search or category filters</p>
+          </div>
+        )}
       </div>
     </section>
   );
