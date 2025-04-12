@@ -129,8 +129,8 @@ const Blog = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full py-3 pl-4 pr-12 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
               />
-              <button className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-black" aria-label="search button">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <button className="absolute right-3 top-1/2 transform -translate-y-1/2 text-black" aria-label="search button">
+                <svg className=" w-6 md:w-5 h-6 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </button>
@@ -341,7 +341,7 @@ const Blog = () => {
                     href={`/blog/${post.slug.current}`} 
                     className="text-sm text-black font-semibold hover:text-yellow-600 transition-colors duration-300 font-barlow flex items-center"
                   
-                    aria-label="Read more about this article">
+                    aria-label={`read more about ${post.slug.current}`}>
                     Read More
                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
