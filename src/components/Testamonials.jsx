@@ -46,16 +46,7 @@ export default function Testimonials() {
 
   return (
     <>
-      <title>TESTIMONIALS</title>
-      <meta
-        name="description"
-        content="We provide the best logistics services with reliability and efficiency."
-      />
-      <meta
-        name="keywords"
-        content="customer testimonials, truck repair reviews, fleet maintenance feedback, emergency roadside assistance, heavy-duty truck repair"
-      />
-      <meta name="author" content="Truck and trailer repair" />
+      
 
       <section name="testimonial" className="py-20 bg-white">
         <div className="text-center mb-16">

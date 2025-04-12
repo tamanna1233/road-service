@@ -6,17 +6,7 @@ const Home = () => {
   return (
     <>
       {/* Primary Meta Tags */}
-      <title>24/7 Emergency Truck Repair & Roadside Assistance | Fast & Reliable</title>
-      <meta
-        name="description"
-        content="Get 24/7 emergency truck repair and roadside assistance for semi-trucks, diesel trucks, and commercial fleets. Fast, reliable, and professional service nationwide."
-      />
-      <meta
-        name="keywords"
-        content="truck repair, emergency truck repair, mobile truck repair, semi-truck repair, diesel truck repair, roadside assistance, fleet maintenance, logistics support"
-      />
-      <meta name="author" content="Your Company Name" />
-      <meta name="robots" content="index, follow" />
+      
 
       {/* Hero Section */}
       <section
