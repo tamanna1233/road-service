@@ -86,7 +86,7 @@ export default function Footer() {
           <a 
           href="tel: +91 85804-66164" 
           title="Call +91 98765 43210" 
-           aria-label="Call us at +91 98765 43210">85804-66164</a> 
+           aria-label="Call us at +91 85804-66164">+91 85804-66164</a> 
             </li>
             <li className="flex items-center gap-2 ">
               <MdOutlineEmail size={25}className=" text-yellow-400"/>
