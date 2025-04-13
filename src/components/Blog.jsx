@@ -130,7 +130,7 @@ const Blog = () => {
                 className="w-full py-3 pl-4 pr-12 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
               />
               <button className="absolute right-3 top-1/2 transform -translate-y-1/2 text-black" aria-label="search button">
-                <svg className=" w-6 md:w-5 h-6 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className=" w-6 md:w-8 h-6 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </button>
@@ -187,7 +187,6 @@ const Blog = () => {
                     src={urlFor(featuredPost.mainImage).width(1200).height(800).url()}
                     alt={featuredPost.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
                   />
                 ) : (
                   <div className="w-full h-full bg-gray-300 flex items-center justify-center text-gray-600">
@@ -283,7 +282,6 @@ const Blog = () => {
                     src={urlFor(post.mainImage).width(600).url()}
                     alt={post.title}
                     className="w-full h-56 object-cover transition-transform duration-300 hover:scale-105"
-                    loading="lazy"
                   />
                 ) : (
                   <div className="w-full h-56 bg-gray-300 flex items-center justify-center text-gray-600">No Image</div>
@@ -341,7 +339,7 @@ const Blog = () => {
   className="text-sm text-black font-semibold hover:text-yellow-600 transition-colors duration-300 font-barlow flex items-center"
   aria-label={`Read more: ${post.title}`}
 >
-  {`Read more`}
+Read Full Article  
   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
   </svg>
