@@ -1,5 +1,5 @@
 // import { Mail, MapPin, Phone, Facebook, Twitter, Linkedin, Github } from "lucide-react";
-import { FaAngleRight} from "react-icons/fa";
+import { FaAngleRight, FaWhatsapp} from "react-icons/fa";
 import { FaSquareXTwitter,FaPhone } from "react-icons/fa6";
 import { IoIosTime } from "react-icons/io";
 import {  LiaLinkedinIn } from "react-icons/lia";
@@ -37,7 +37,7 @@ export default function Footer() {
           <div className="flex  gap-4 items-center px-2 md:px-8">
             
             <a href="#" className="hover:text-yellow-500 transition duration-300" aria-label="twitter">
-              <FaSquareXTwitter size={24} />
+              <FaWhatsapp size={24} />
             </a>
             <a href="#" className="hover:text-yellow-500 transition duration-300" aria-label="linkedin">
               <LiaLinkedinIn size={24} />

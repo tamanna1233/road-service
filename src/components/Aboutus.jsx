@@ -1,6 +1,6 @@
 import React from 'react';
 import bg from "../assets/home.webp"
-import { FaLinkedin } from 'react-icons/fa';
+import { FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 const About = () => {
   return (
@@ -65,11 +65,11 @@ const About = () => {
                   Expert in fleet operations, safety, and DOT compliance with a passion for building safer transportation systems.
                 </p>
                 <div className="flex space-x-3"> 
-            <a href="https://www.linkedin.com/in/rahulwalia" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl" aria-label='LinkedIn Profile'>
+            <a href="https://linkedin.com/in/rahul-walia-a48a51176" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl" aria-label='LinkedIn Profile'>
           <FaLinkedin />
          </a>
-        <a href="https://twitter.com/rahulwalia" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl" aria-label='Twitter Profile'>
-       <FaXTwitter />
+        <a href="https://wa.me/+917018953717?text=Hello%20I%20am%20interested%20in%20your%20logistics%20services." target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl" aria-label='Twitter Profile'>
+       <FaWhatsapp />
        </a>
       </div>
               </div>
@@ -90,8 +90,8 @@ const About = () => {
             <a href="https://www.linkedin.com/in/rahulwalia" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl" aria-label='LinkedIn Profile'>
           <FaLinkedin />
          </a>
-        <a href="https://twitter.com/rahulwalia" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl" aria-label='Twitter Profile'>
-       <FaXTwitter />
+        <a href="https://wa.me/+918580466164?text=Hello%20I%20am%20interested%20in%20your%20logistics%20services." target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl" aria-label='Twitter Profile'>
+       <FaWhatsapp />
        </a>
       </div>
               </div>

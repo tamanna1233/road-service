@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaLinkedin, FaXTwitter } from 'react-icons/fa6';
+import { FaLinkedin, FaWhatsapp, FaXTwitter } from 'react-icons/fa6';
 import bg from "../assets/home.webp"
 const founders = [
   {
@@ -13,6 +13,9 @@ const founders = [
       'DOT Compliance',
       'Safety Training Programs',
     ],
+    linkdenlink:"https://linkedin.com/in/rahul-walia-a48a51176",
+    whatapplink:"https://wa.me/+917018953717?text=Hello%20I%20am%20interested%20in%20your%20logistics%20services."
+
   },
   {
     name: 'Karan Dhatwalia',
@@ -25,6 +28,8 @@ const founders = [
       'Intermodal Logistics',
       'Warehousing & Distribution',
     ],
+    linkdenlink:"",
+    whatapplink:"https://wa.me/+917018953717?text=Hello%20I%20am%20interested%20in%20your%20logistics%20services."
   },
 ];
 
@@ -104,7 +109,7 @@ const Founders = () => {
               <a href="#" 
                  className="text-gray-600 hover:text-black transition-colors duration-300" 
                  aria-label="Twitter Profile">
-                <FaXTwitter className="w-6 h-6" />
+                <FaWhatsapp className="w-6 h-6" />
               </a>
 
                   </div>
