@@ -1,7 +1,42 @@
+import { useState } from 'react';
 import { FaLinkedin } from 'react-icons/fa';
 import { FaSquareXTwitter, FaWhatsapp } from 'react-icons/fa6';
-
+import { client } from "../sanity"
+import { useNavigate } from 'react-router-dom';
 const Contact = () => {
+const [form ,setFrom]=useState({
+  name:"",
+  email:"",
+  phone:"",
+  message:"",
+})
+  const[isSubmiting,setIsSubmiting]=useState(false)
+const navigate=useNavigate()
+const handleChange=(e)=>{
+setFrom(()=>(({...form,[e.target.name]:e.target.value})))
+}
+
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmiting(true);
+
+  const contactDoc = {
+    _type: 'contact',
+    ...form,
+    createdAt: new Date().toISOString(),
+  };
+
+  try {
+    await client.create(contactDoc);
+    setFrom({ name: '', email: '', phone: '', message: '' });
+    navigate('/thankyou')
+  } catch (err) {
+    console.error('Sanity error:', err);
+  } finally {
+    setIsSubmiting(false);
+  }
+};
   return (
     <section name="contact" className="bg-gray-200 py-20 px-6 md:px-12 lg:px-24">
       <div className="max-w-4xl mx-auto text-center">
@@ -18,13 +53,15 @@ const Contact = () => {
             <h1 className="text-3xl">Send Us a Message</h1>
             <h2 className="text-white">We'll get back to you within 24 hours.</h2>
           </div>
-          <form className="flex flex-col gap-4 py-4 container px-8">
+          <form  onSubmit={handleSubmit} className="flex flex-col gap-4 py-4 container px-8">
             <div className="flex flex-col md:flex-row gap-4">
               <div className="flex-1">
                 <label className="block text-sm font-medium mb-1">Name*</label>
                 <input
                   type="text"
                   name="name"
+                  onChange={handleChange}
+                  value={form.name}
                   required
                   className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-yellow-500 outline-none"
                   placeholder="Your Name"
@@ -35,6 +72,8 @@ const Contact = () => {
                 <input
                   type="email"
                   name="email"
+                  onChange={handleChange}
+                  value={form.email}
                   required
                   className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-yellow-500 outline-none"
                   placeholder="Your Email"
@@ -48,6 +87,8 @@ const Contact = () => {
                 type="tel"
                 name="phone"
                 required
+                onChange={handleChange}
+                value={form.phone}
                 className="w-full p-3 rounded-lg focus:ring-2 focus:ring-yellow-500 border outline-none"
                 placeholder="Your Phone Number"
               />
@@ -59,6 +100,8 @@ const Contact = () => {
                 name="message"
                 rows="5"
                 required
+                onChange={handleChange}
+                value={form.message}
                 className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-yellow-500 outline-none"
                 placeholder="Your Message"
               ></textarea>
@@ -75,7 +118,7 @@ const Contact = () => {
               type="submit"
               className="w-full bg-yellow-400 text-black py-3 rounded-lg font-semibold text-lg hover:bg-yellow-500 transition"
             >
-              Send Message
+             {isSubmiting?"sending...":"Send Message"}
             </button>
           </form>
         </div>

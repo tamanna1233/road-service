@@ -7,6 +7,7 @@ export const client = createClient({
   dataset: config.dataset,        // Or your dataset name
   apiVersion: '2025-04-08',     // Use today's date or schema's API version
   useCdn: true,
+  token: config.token, 
 });
 const builder = imageUrlBuilder(client);
 

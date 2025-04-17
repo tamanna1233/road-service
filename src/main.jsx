@@ -6,6 +6,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 
 import { lazy ,Suspense} from 'react'
 import LoadingAnimation from './components/Loadinganimation.jsx'
+import ThankYou from './components/Thankyou.jsx'
 
 const  BlogList =lazy(()=>import('./pages/Blogspage.jsx')) 
 const BlogDetails= lazy(()=>import('./components/BlogDetails.jsx')) 
@@ -41,6 +42,7 @@ const router=createBrowserRouter(
     <Route path='/services/:serviceId' element={<Servicespage/>}/>
     <Route path="/blog/:slug" element={<BlogDetails />} />
 
+    <Route path='/thankyou' element={<ThankYou/>}/>
     </Route>
   
   )
