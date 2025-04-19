@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AiOutlineDown } from "react-icons/ai";
 import logo from "../assets/logo3.png";
 
@@ -60,9 +60,9 @@ export default function Navbar() {
                     />
                   </button>
                 ) : (
-                  <Link to={item.path} className="text-white hover:text-blue-600">
+                  <NavLink to={item.path} className={({isActive})=>(isActive?"text-yellow-400":"text-white hover:text-blue-600")}>
                     {item.name}
-                  </Link>
+                  </NavLink>
                 )}
 
                 {/* Dropdown Menu (Only for Desktop) */}
