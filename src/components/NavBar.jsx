@@ -60,7 +60,7 @@ export default function Navbar() {
                     />
                   </button>
                 ) : (
-                  <NavLink to={item.path} className={({isActive})=>(isActive?"text-yellow-400":"text-white hover:text-blue-600")}>
+                  <NavLink to={item.path} className={({isActive})=>(isActive?"text-yellow-400":"text-white hover:text-yellow-400")}>
                     {item.name}
                   </NavLink>
                 )}
