@@ -52,8 +52,8 @@ const About = () => {
         <div className="bg-gray-200 py-16 px-2 md:px-10 rounded-xl mb-20 ">
           <h3 className="text-2xl font-bold mb-10 text-center text-black font-barlow">Leadership Team</h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 ">
-            {/* Founder 1 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 ">
+            {/* first member 1 */}
             <div className="bg-white p-6 rounded-lg shadow-md flex flex-col md:flex-row gap-6 items-center md:items-start">
               <div className="w-32 h-32 bg-black rounded-full flex items-center justify-center flex-shrink-0">
                 <span className="text-yellow-400 text-4xl font-bold font-barlow">RW</span>
@@ -75,7 +75,7 @@ const About = () => {
               </div>
             </div>
 
-            {/* Founder 2 */}
+            {/* second member */}
             <div className="bg-white p-6 rounded-lg shadow-md flex flex-col md:flex-row gap-6 items-center md:items-start">
               <div className="w-32 h-32 bg-black rounded-full flex items-center justify-center flex-shrink-0">
                 <span className="text-yellow-400 text-4xl font-bold font-barlow">KD</span>
@@ -91,6 +91,27 @@ const About = () => {
           <FaLinkedin />
          </a>
         <a href="https://wa.me/+918580466164?text=Hello%20I%20am%20interested%20in%20your%20logistics%20services." target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl" aria-label='Twitter Profile'>
+       <FaWhatsapp />
+       </a>
+      </div>
+              </div>
+            </div>
+            {/* third member */}
+            <div className="bg-white p-6 rounded-lg shadow-md flex flex-col md:flex-row gap-6 items-center md:items-start">
+              <div className="w-32 h-32 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+                <span className="text-yellow-400 text-4xl font-bold font-barlow">TM</span>
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-black mb-2 font-barlow">Tanya Mandhotra</h4>
+                <p className="text-black font-medium mb-3 font-barlow">Logistics Expert</p>
+                <p className="text-gray-700 mb-4 font-roboto">
+                  Expert in dispatching, intermodal logistics, and warehousing with a focus on optimizing end-to-end supply chains.
+                </p>
+                <div className="flex space-x-3">
+            <a href="https://www.linkedin.com/in/rahulwalia" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl" aria-label='LinkedIn Profile'>
+          <FaLinkedin />
+         </a>
+        <a href="https://wa.me/+918091351213?text=Hello%20I%20am%20interested%20in%20your%20logistics%20services." target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black text-xl" aria-label='Twitter Profile'>
        <FaWhatsapp />
        </a>
       </div>
