@@ -17,6 +17,7 @@ const Home = () => {
           style={{
             backgroundImage: `url(${bg})`,
           }}
+          fetchpriority="high"
         ></div>
 
         {/* Overlay */}
