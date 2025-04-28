@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, NavLink } from "react-router-dom";
 import { AiOutlineDown } from "react-icons/ai";
-import logo from "../assets/logo3.png";
+import logo from "../assets/logo3.avif";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,16 +11,14 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Home", path: "/" },
-  
+
     {
       name: "About Us",
-      path: "/about-us"
+      path: "/about-us",
     },
-    { name: "Testimonial",path: "/testimonial"
-    },
+    { name: "Testimonial", path: "/testimonial" },
     { name: "Blogs", path: "/blogs" },
     { name: "Contact", path: "/contact" },
-
   ];
 
   // Close dropdown when clicking outside (for desktop only)
@@ -36,11 +34,9 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="fixed w-full z-50 bg-black">
+    <header className="fixed w-full z-50 bg-black  mb-2">
       <nav className="flex justify-between  items-center h-16 px-6 text-white">
-        
-         <img src={logo} className="h-16 md:h-26" alt=" brand logo"/>
-    
+        <img src={logo} className="h-16 " alt=" brand logo" />
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex md:items-center space-x-6">
@@ -50,17 +46,28 @@ export default function Navbar() {
                 {item.dropdown ? (
                   <button
                     className="flex items-center gap-1 text-white hover:text-blue-600"
-                    onClick={() => setDropdown(dropdown === item.name ? null : item.name)}
+                    onClick={() =>
+                      setDropdown(dropdown === item.name ? null : item.name)
+                    }
                     aria-expanded={dropdown === item.name}
                     aria-label={`Toggle ${item.name} menu`}
                   >
                     {item.name}
                     <AiOutlineDown
-                      className={`transition-transform ${dropdown === item.name ? "rotate-180" : ""}`}
+                      className={`transition-transform ${
+                        dropdown === item.name ? "rotate-180" : ""
+                      }`}
                     />
                   </button>
                 ) : (
-                  <NavLink to={item.path} className={({isActive})=>(isActive?"text-yellow-400":"text-white hover:text-yellow-400")}>
+                  <NavLink
+                    to={item.path}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-yellow-400"
+                        : "text-white hover:text-yellow-400"
+                    }
+                  >
                     {item.name}
                   </NavLink>
                 )}
@@ -98,8 +105,18 @@ export default function Navbar() {
           className="md:hidden text-gray-400 hover:text-white"
           aria-label="Toggle mobile menu"
         >
-          <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+          <svg
+            className="h-6 w-6"
+            stroke="currentColor"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
           </svg>
         </button>
       </nav>
@@ -129,11 +146,17 @@ export default function Navbar() {
                     <>
                       <button
                         className="flex justify-between items-center w-full text-white hover:text-blue-600"
-                        onClick={() => setMobileDropdown(mobileDropdown === item.name ? null : item.name)}
+                        onClick={() =>
+                          setMobileDropdown(
+                            mobileDropdown === item.name ? null : item.name
+                          )
+                        }
                       >
                         {item.name}
                         <AiOutlineDown
-                          className={`transition-transform ${mobileDropdown === item.name ? "rotate-180" : ""}`}
+                          className={`transition-transform ${
+                            mobileDropdown === item.name ? "rotate-180" : ""
+                          }`}
                         />
                       </button>
 
