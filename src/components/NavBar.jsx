@@ -36,7 +36,7 @@ export default function Navbar() {
   return (
     <header className="fixed w-full z-50 bg-black  mb-2">
       <nav className="flex justify-between  items-center h-16 px-6 text-white">
-        <img src={logo} className="h-16 " alt=" brand logo" />
+        <img src={logo} className="h-12 " alt=" brand logo" />
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex md:items-center space-x-6">
