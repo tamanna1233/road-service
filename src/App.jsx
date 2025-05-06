@@ -10,7 +10,7 @@ console.log(maintenance);
 const ispaymentdone = import.meta.env.VITE_PAYMENT_STATUS;
 function App() {
   if (!maintenance) return <MaintenancePage />;
-  if (true) return <SiteDownPage />;
+  if (ispaymentdone !== "true") return <SiteDownPage />;
   return (
     <div className="">
       <Navbar />
