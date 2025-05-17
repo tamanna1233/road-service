@@ -6,10 +6,9 @@ import MaintenancePage from "./pages/Mantiancepage";
 import SiteDownPage from "./pages/Sitedown";
 
 const maintenance = import.meta.env.VITE_MANTAINE_MODE;
-console.log(maintenance);
 const ispaymentdone = import.meta.env.VITE_PAYMENT_STATUS;
 function App() {
-  if (true) return <MaintenancePage />;
+  if (maintenance === "true") return <MaintenancePage />;
   if (ispaymentdone != "true") return <SiteDownPage />;
 
   return (
